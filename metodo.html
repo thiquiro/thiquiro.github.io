@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método | Thi Quiro</title>
+    <meta name="description" content="Passo a passo do atendimento: anamnese, avaliação, escolha criteriosa das intervenções e acompanhamento.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        .passos {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .passo {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 32px;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(30, 77, 65, 0.1);
+            align-items: start;
+        }
+        .passo:last-child { border-bottom: none; }
+        .passo-numero {
+            font-family: var(--fonte-titulo);
+            font-size: 64px;
+            line-height: 1;
+            color: var(--verde-sage);
+            opacity: 0.5;
+        }
+        .passo-conteudo h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 26px;
+            color: var(--verde-floresta);
+            margin-bottom: 12px;
+        }
+        .passo-conteudo p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--cinza-escuro);
+        }
+        .metodo-secao { background-color: var(--branco); }
+        @media (max-width: 700px) {
+            .passo { grid-template-columns: 1fr; gap: 12px; padding: 32px 0; }
+            .passo-numero { font-size: 48px; }
+            .passo-conteudo h3 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Thi Quiro - Quiropraxista & Massoterapeuta">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="filosofia.html">Filosofia</a></li>
+                    <li><a href="metodo.html" class="ativo">Método</a></li>
+                    <li><a href="formacao.html">Formação</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="https://cal.com/thi.quiro" class="nav-agendar" target="_blank" rel="noopener">Agendar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <span class="label reveal">Método</span>
+        <h1 class="reveal">Como funciona<br>o atendimento</h1>
+        <p class="lead reveal">
+            Uma organização que favorece a segurança, a clareza e a qualidade do serviço,
+            respeitando a individualidade de cada pessoa.
+        </p>
+    </section>
+
+    <section class="metodo-secao">
+        <div class="container">
+            <div class="passos">
+                <div class="passo reveal">
+                    <span class="passo-numero">01</span>
+                    <div class="passo-conteudo">
+                        <h3>Primeiro contato e compreensão da necessidade</h3>
+                        <p>
+                            Busco entender o motivo da procura, as expectativas da pessoa e as informações
+                            iniciais necessárias para verificar se o atendimento pretendido é compatível
+                            com minha atuação.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="passo reveal">
+                    <span class="passo-numero">02</span>
+                    <div class="passo-conteudo">
+                        <h3>Anamnese e triagem</h3>
+                        <p>
+                            Antes de realizar o procedimento, considero o histórico de saúde, os sintomas,
+                            as condições preexistentes, os medicamentos informados e outros fatores que
+                            possam interferir na segurança. A anamnese é parte essencial do processo,
+                            e não apenas uma formalidade administrativa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="passo reveal">
+                    <span class="passo-numero">03</span>
+                    <div class="passo-conteudo">
+                        <h3>Avaliação e definição de objetivos</h3>
+                        <p>
+                            Quando apropriado, realizo avaliações compatíveis com minha formação e com o
+                            serviço oferecido. Procuro estabelecer objetivos realistas, esclarecer as
+                            limitações do atendimento e identificar situações que exijam encaminhamento
+                            ou investigação adicional.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="passo reveal">
+                    <span class="passo-numero">04</span>
+                    <div class="passo-conteudo">
+                        <h3>Escolha das intervenções</h3>
+                        <p>
+                            Seleciono as técnicas de acordo com a necessidade apresentada, a avaliação
+                            realizada, as contraindicações e a resposta esperada. A utilização de recursos
+                            complementares depende de indicação e não constitui uma obrigação em toda sessão.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="passo reveal">
+                    <span class="passo-numero">05</span>
+                    <div class="passo-conteudo">
+                        <h3>Realização e acompanhamento durante a sessão</h3>
+                        <p>
+                            Procuro manter comunicação com a pessoa durante o procedimento, observar sua
+                            resposta e adaptar ou interromper a intervenção quando necessário. O consentimento
+                            e o conforto da pessoa são fundamentais.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="passo reveal">
+                    <span class="passo-numero">06</span>
+                    <div class="passo-conteudo">
+                        <h3>Orientações posteriores</h3>
+                        <p>
+                            Ao final, forneço informações compatíveis com o atendimento realizado, esclareço
+                            dúvidas e explico quais sinais ou mudanças merecem atenção. Não apresento
+                            orientações como substitutas de uma avaliação médica quando esta for necessária.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="passo reveal">
+                    <span class="passo-numero">07</span>
+                    <div class="passo-conteudo">
+                        <h3>Relacionamento e continuidade</h3>
+                        <p>
+                            Quando houver necessidade ou justificativa para acompanhamento, procuro manter
+                            uma comunicação organizada e respeitosa. A frequência de novos atendimentos
+                            deve considerar a resposta individual, os objetivos definidos e a pertinência
+                            da continuidade, sem criar dependência ou indicar sessões desnecessárias.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="citacao">
+        <blockquote class="reveal">
+            "A decisão de intervir precisa ser sustentada pelas informações disponíveis e pelas condições observadas."
+        </blockquote>
+    </section>
+
+    <section class="cta">
+        <h2 class="reveal">Pronto para começar?</h2>
+        <p class="reveal">
+            Agende seu atendimento e vamos conversar sobre o que você precisa.
+        </p>
+        <div class="reveal">
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="btn btn-claro">Agendar Consulta</a>
+            <a href="formacao.html" class="btn btn-primario">Ver formação</a>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Thi Quiro</strong> — Quiropraxista & Massoterapeuta</p>
+        <p>Salesópolis, SP e região · Agendamentos 100% online</p>
+        <p>
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a> ·
+            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="https://linktr.ee/thi.quiro" target="_blank" rel="noopener">Todos os links</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">© 2026 Thi Quiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="index.html" class="btn-voltar" aria-label="Voltar ao início">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Início
+    </a>
+
+    <script>
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorRing = document.querySelector('.cursor-ring');
+        const pointerFine = window.matchMedia('(pointer: fine)').matches;
+        if (pointerFine) {
+            document.addEventListener('mousemove', (e) => {
+                cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+                cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+            });
+            document.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+            });
+        }
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), index * 60);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+
+</body>
+</html>
