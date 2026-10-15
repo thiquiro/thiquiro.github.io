@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThiQuiro | Quiropraxista & Massoterapeuta</title>
-    <meta name="description" content="ThiQuiro - Quiropraxia e Massoterapia em Salesópolis e região. Agendamentos 100% online.">
+    <title>Thi Quiro | Quiropraxista & Massoterapeuta</title>
+    <meta name="description" content="Thi Quiro - Quiropraxia e Massoterapia em Salesópolis e região. Agendamentos 100% online.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -275,36 +275,21 @@
             height: 110%;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--verde-sage), var(--verde-petroleo));
-            opacity: 0.2;
+            opacity: 0.25;
             filter: blur(40px);
             z-index: 0;
         }
-        /* Placeholder temporário — trocar por <img> quando tiver a foto */
-        .foto-perfil {
+        .foto-perfil-img {
             width: 340px;
             height: 340px;
-            background: linear-gradient(135deg, var(--verde-petroleo), var(--verde-floresta));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--branco);
-            font-family: var(--fonte-titulo);
-            font-size: 130px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            animation: morph 10s ease-in-out infinite;
+            object-fit: cover;
+            object-position: center;
+            animation: morph 12s ease-in-out infinite;
             position: relative;
             z-index: 1;
             box-shadow: 0 30px 80px rgba(30, 77, 65, 0.25);
+            border: 4px solid var(--branco);
         }
-        /* Quando tiver a foto, use esta classe no <img>:
-        .foto-perfil-img {
-            width: 340px; height: 340px;
-            object-fit: cover;
-            animation: morph 10s ease-in-out infinite;
-            box-shadow: 0 30px 80px rgba(30, 77, 65, 0.25);
-        }
-        */
 
         .sobre-texto .label {
             font-family: var(--fonte-corpo);
@@ -502,7 +487,7 @@
                 text-align: center;
             }
             .sobre-lista li { justify-content: center; }
-            .foto-perfil { width: 240px; height: 240px; font-size: 90px; }
+            .foto-perfil-img { width: 240px; height: 240px; }
             .sobre-texto h2 { font-size: 34px; }
         }
 
@@ -538,13 +523,13 @@
     <header>
         <div class="header-container">
             <a href="/" class="logo">
-                <img src="logo.png" alt="ThiQuiro - Quiropraxista & Massoterapeuta">
+                <img src="logo.png" alt="Thi Quiro - Quiropraxista & Massoterapeuta">
             </a>
             <nav>
                 <ul>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#agendamento">Agendamento</a></li>
+                    <li><a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
@@ -553,18 +538,18 @@
     </header>
 
     <section class="hero-banner">
-        <img src="capa.png" alt="ThiQuiro - Alívio das dores. Cuidado com propósito.">
+        <img src="capa.png" alt="Thi Quiro - Alívio das dores. Cuidado com propósito.">
     </section>
 
     <section class="hero">
-        <h1 class="reveal">Bem-vindo à ThiQuiro</h1>
+        <h1 class="reveal">Bem-vindo à Thi Quiro</h1>
         <p class="subtitulo reveal">Alívio das dores. Cuidado com propósito.</p>
         <p class="reveal">
             Quiropraxia e massoterapia em Salesópolis e região.
             Agendamentos 100% online — marque sua consulta e sinta a diferença de um atendimento personalizado.
         </p>
         <div class="reveal">
-            <a href="#agendamento" class="btn btn-primario">Agendar Consulta</a>
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="btn btn-primario">Agendar Consulta</a>
             <a href="#sobre" class="btn btn-secundario">Conhecer o Thiago</a>
         </div>
     </section>
@@ -573,8 +558,7 @@
     <section class="sobre" id="sobre">
         <div class="sobre-grid">
             <div class="foto-wrapper reveal">
-                <!-- Placeholder — substituir por <img src="foto-thiago.jpg" class="foto-perfil-img" alt="Thiago Alvarenga"> quando tiver a foto -->
-                <div class="foto-perfil">TA</div>
+                <img src="foto-thiago.jpg" class="foto-perfil-img" alt="Thiago Alvarenga - Quiropraxista e Massoterapeuta">
             </div>
             <div class="sobre-texto">
                 <span class="label reveal">Sobre</span>
@@ -603,7 +587,7 @@
                         Atendimento personalizado e humanizado
                     </li>
                 </ul>
-                <a href="#agendamento" class="btn btn-primario reveal">Agende sua sessão</a>
+                <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="btn btn-primario reveal">Agende sua sessão</a>
             </div>
         </div>
     </section>
@@ -612,7 +596,7 @@
         <div class="container">
             <h2 class="secao-titulo reveal">Acesse Rápido</h2>
             <div class="cards">
-                <a href="#agendamento" class="card reveal">
+                <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="card reveal">
                     <span class="icone">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="5" width="18" height="16" rx="3"/>
@@ -666,10 +650,14 @@
     </section>
 
     <footer id="contato">
-        <p><strong>ThiQuiro</strong> — Quiropraxista & Massoterapeuta</p>
+        <p><strong>Thi Quiro</strong> — Quiropraxista & Massoterapeuta</p>
         <p>Salesópolis, SP e região · Agendamentos 100% online</p>
-        <p><a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> · <a href="https://linktr.ee/thi.quiro" target="_blank" rel="noopener">Todos os links</a></p>
-        <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">© 2026 ThiQuiro. Todos os direitos reservados.</p>
+        <p>
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a> · 
+            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> · 
+            <a href="https://linktr.ee/thi.quiro" target="_blank" rel="noopener">Todos os links</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">© 2026 Thi Quiro. Todos os direitos reservados.</p>
     </footer>
 
     <script>
@@ -684,7 +672,6 @@
                 cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
             });
 
-            // Efeito hover em elementos interativos
             const hoverables = document.querySelectorAll('a, button, .card');
             hoverables.forEach(el => {
                 el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
@@ -697,7 +684,6 @@
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    // Delay escalonado para elementos próximos
                     setTimeout(() => {
                         entry.target.classList.add('visible');
                     }, index * 60);
