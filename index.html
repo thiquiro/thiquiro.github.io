@@ -3,56 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThiQuiro - Quiropraxia</title>
+    <title>ThiQuiro | Quiropraxista & Massoterapeuta</title>
+    <meta name="description" content="ThiQuiro - Quiropraxia e Massoterapia em Salesópolis e região. Agendamentos 100% online.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            text-align: center; 
-            padding: 50px; 
-            background-color: #f4f9f9; 
-            color: #333; 
-            margin: 0;
+        :root {
+            --branco: #ffffff;
+            --terracota: #953017;
+            --verde-petroleo: #299285;
+            --verde-floresta: #1e4d41;
+            --verde-sage: #a9b8a2;
+            --marrom-escuro: #5e473e;
+            --bege-claro: #f2ede3;
+            --cinza-escuro: #333333;
+
+            --fonte-titulo: 'Playfair Display SC', serif;
+            --fonte-subtitulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Lato', sans-serif;
         }
-        .container { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            background: white; 
-            padding: 50px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-        }
-        h1 { 
-            color: #1e5b5a; 
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        p { 
-            font-size: 1.2em; 
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--fonte-corpo);
+            font-size: 18px;
             line-height: 1.6;
-            color: #555;
+            color: var(--cinza-escuro);
+            background-color: var(--bege-claro);
         }
-        .btn { 
-            display: inline-block; 
-            margin-top: 30px; 
-            padding: 12px 30px; 
-            background-color: #1e5b5a; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 6px; 
-            font-weight: bold;
-            transition: background 0.3s;
+
+        /* ===== CABEÇALHO ===== */
+        header {
+            background-color: var(--branco);
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .btn:hover {
-            background-color: #144241;
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img { height: 70px; width: auto; display: block; }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            font-family: var(--fonte-corpo);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--verde-floresta);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--terracota); }
+
+        /* ===== CAPA ===== */
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== SEÇÃO PRINCIPAL ===== */
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: var(--fonte-titulo);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--verde-floresta);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitulo {
+            font-family: var(--fonte-subtitulo);
+            font-size: 32px;
+            font-style: italic;
+            color: var(--marrom-escuro);
+            margin-bottom: 32px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--cinza-escuro);
+            max-width: 700px;
+            margin: 0 auto 32px auto;
+        }
+
+        /* ===== BOTÕES ===== */
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            font-family: var(--fonte-corpo);
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin: 8px;
+        }
+
+        .btn-primario { background-color: var(--terracota); color: var(--branco); }
+        .btn-primario:hover { background-color: #7a2712; transform: translateY(-2px); }
+
+        .btn-secundario {
+            background-color: transparent;
+            color: var(--verde-floresta);
+            border: 2px solid var(--verde-floresta);
+        }
+        .btn-secundario:hover {
+            background-color: var(--verde-floresta);
+            color: var(--branco);
+            transform: translateY(-2px);
+        }
+
+        /* ===== ACESSO RÁPIDO ===== */
+        .acesso-rapido { background-color: var(--branco); padding: 80px 24px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .secao-titulo {
+            font-family: var(--fonte-corpo);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--verde-floresta);
+            text-align: center;
+            margin-bottom: 48px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--bege-claro);
+            padding: 32px 24px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--cinza-escuro);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            border-color: var(--verde-petroleo);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(30, 77, 65, 0.1);
+        }
+
+        .card .icone { font-size: 36px; margin-bottom: 16px; display: block; }
+        .card h3 {
+            font-family: var(--fonte-corpo);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--verde-floresta);
+            margin-bottom: 8px;
+        }
+        .card p { font-size: 16px; color: var(--marrom-escuro); }
+
+        /* ===== CITAÇÃO ===== */
+        .citacao {
+            background-color: var(--verde-floresta);
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .citacao blockquote {
+            font-family: var(--fonte-subtitulo);
+            font-size: 24px;
+            font-style: italic;
+            color: var(--branco);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* ===== RODAPÉ ===== */
+        footer {
+            background-color: var(--marrom-escuro);
+            color: var(--bege-claro);
+            padding: 40px 24px;
+            text-align: center;
+        }
+        footer p { font-size: 16px; margin-bottom: 8px; }
+        footer a { color: var(--verde-sage); text-decoration: none; }
+        footer a:hover { color: var(--branco); }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero .subtitulo { font-size: 22px; }
+            .header-container { flex-direction: column; gap: 12px; }
+            nav ul { gap: 16px; flex-wrap: wrap; justify-content: center; }
+            nav a { font-size: 14px; }
+            .logo img { height: 55px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="logo.png" alt="ThiQuiro - Quiropraxista & Massoterapeuta">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#agendamento">Agendamento</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <img src="capa.png" alt="ThiQuiro - Alívio das dores. Cuidado com propósito.">
+    </section>
+
+    <section class="hero">
         <h1>Bem-vindo à ThiQuiro</h1>
-        <p>Em breve, nosso novo site estará no ar.</p>
-        <p>Aqui você poderá agendar consultas, acessar a área do paciente e conferir dicas sobre quiropraxia.</p>
-        <a href="#" class="btn">Fale Conosco</a>
-    </div>
+        <p class="subtitulo">Alívio das dores. Cuidado com propósito.</p>
+        <p>
+            Quiropraxia e massoterapia em Salesópolis e região.
+            Agendamentos 100% online — marque sua consulta e sinta a diferença de um atendimento personalizado.
+        </p>
+        <a href="#agendamento" class="btn btn-primario">Agendar Consulta</a>
+        <a href="#sobre" class="btn btn-secundario">Conhecer o Thiago</a>
+    </section>
+
+    <section class="acesso-rapido" id="servicos">
+        <div class="container">
+            <h2 class="secao-titulo">Acesse Rápido</h2>
+            <div class="cards">
+                <a href="#agendamento" class="card">
+                    <span class="icone">📅</span>
+                    <h3>Agendamento</h3>
+                    <p>Marque sua consulta online</p>
+                </a>
+                <a href="https://wa.me/55SEUNUMERO" class="card" target="_blank">
+                    <span class="icone">💬</span>
+                    <h3>WhatsApp</h3>
+                    <p>Fale direto comigo</p>
+                </a>
+                <a href="https://instagram.com/thi.quiro" class="card" target="_blank">
+                    <span class="icone">📸</span>
+                    <h3>Instagram</h3>
+                    <p>@thi.quiro</p>
+                </a>
+                <a href="#blog" class="card">
+                    <span class="icone">📖</span>
+                    <h3>Blog</h3>
+                    <p>Dicas de saúde e bem-estar</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="citacao">
+        <blockquote>
+            "O corpo tem a incrível capacidade de se curar quando damos a ele o cuidado certo."
+        </blockquote>
+    </section>
+
+    <footer id="contato">
+        <p><strong>ThiQuiro</strong> — Quiropraxista & Massoterapeuta</p>
+        <p>Salesópolis, SP e região · Agendamentos 100% online</p>
+        <p><a href="https://instagram.com/thi.quiro" target="_blank">Instagram</a> · <a href="https://linktr.ee/thi.quiro" target="_blank">Todos os links</a></p>
+        <p style="margin-top: 16px; font-size: 14px; opacity: 0.7;">© 2026 ThiQuiro. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>
