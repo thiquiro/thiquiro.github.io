@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação | Thi Quiro</title>
+    <meta name="description" content="Formação acadêmica, cursos em terapias manuais e experiência profissional de Thiago Alvarenga.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        .formacao-secao { background-color: var(--branco); }
+        .formacao-secao.alt { background-color: var(--bege-claro); }
+
+        .lista-formacao {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        .lista-formacao li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(30, 77, 65, 0.1);
+            font-size: 17px;
+            color: var(--cinza-escuro);
+            line-height: 1.7;
+        }
+        .lista-formacao li:last-child { border-bottom: none; }
+        .lista-formacao li svg {
+            flex-shrink: 0;
+            margin-top: 4px;
+            color: var(--verde-petroleo);
+        }
+        .lista-formacao li strong {
+            color: var(--verde-floresta);
+            font-weight: 700;
+        }
+
+        .badges-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .badge {
+            display: inline-block;
+            padding: 10px 22px;
+            background: linear-gradient(145deg, var(--branco), #faf6ef);
+            color: var(--verde-floresta);
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            border: 2px solid rgba(30, 77, 65, 0.08);
+            transition: all 0.3s ease;
+        }
+        .badge:hover {
+            background: linear-gradient(135deg, var(--verde-floresta), var(--verde-petroleo));
+            color: var(--branco);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(30, 77, 65, 0.2);
+        }
+
+        .intro-formacao {
+            max-width: 820px;
+            margin: 0 auto 60px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.9;
+            color: var(--cinza-escuro);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Thi Quiro - Quiropraxista & Massoterapeuta">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="filosofia.html">Filosofia</a></li>
+                    <li><a href="metodo.html">Método</a></li>
+                    <li><a href="formacao.html" class="ativo">Formação</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="https://cal.com/thi.quiro" class="nav-agendar" target="_blank" rel="noopener">Agendar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <span class="label reveal">Formação</span>
+        <h1 class="reveal">Conhecimento em<br>construção contínua</h1>
+        <p class="lead reveal">
+            Uma trajetória que reúne ciências exatas, educação, terapias manuais
+            e organização de processos.
+        </p>
+    </section>
+
+    <section class="formacao-secao">
+        <div class="container">
+            <span class="secao-label reveal">Formação Acadêmica</span>
+            <h2 class="secao-titulo reveal">Formações concluídas</h2>
+            <p class="intro-formacao reveal">
+                Minha formação reúne conhecimentos científicos, pedagógicos e técnicos que
+                contribuem para a construção da minha identidade profissional.
+            </p>
+            <ul class="lista-formacao">
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span><strong>Bacharelado em Química</strong></span>
+                </li>
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span><strong>Licenciatura em Química</strong></span>
+                </li>
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span><strong>Formação em Física</strong></span>
+                </li>
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span><strong>Formação em Matemática</strong></span>
+                </li>
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span><strong>Formação em Pedagogia</strong></span>
+                </li>
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span><strong>Pós-graduação em Docência do Ensino Superior</strong></span>
+                </li>
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span><strong>Pós-graduação em Psicopedagogia Institucional</strong></span>
+                </li>
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <span><strong>Graduação Tecnológica em Banco de Dados</strong> (em andamento)</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="formacao-secao alt">
+        <div class="container">
+            <span class="secao-label reveal">Terapias Manuais</span>
+            <h2 class="secao-titulo reveal">Cursos e áreas de estudo</h2>
+            <p class="intro-formacao reveal">
+                Ao longo da minha trajetória, busquei conhecimentos em diferentes técnicas e abordagens
+                relacionadas ao cuidado corporal. Essa pluralidade faz parte da minha história e
+                amplia meu repertório — sem significar que todas as técnicas sejam utilizadas em
+                todos os atendimentos.
+            </p>
+            <div class="badges-grid">
+                <span class="badge reveal">Massagem Relaxante</span>
+                <span class="badge reveal">Quick Massage</span>
+                <span class="badge reveal">Shiatsu</span>
+                <span class="badge reveal">Do-In</span>
+                <span class="badge reveal">Quiropraxia</span>
+                <span class="badge reveal">Ventosaterapia</span>
+                <span class="badge reveal">Moxabustão</span>
+                <span class="badge reveal">Bambuterapia</span>
+                <span class="badge reveal">Pedras Quentes</span>
+                <span class="badge reveal">Massagem Terapêutica</span>
+                <span class="badge reveal">Liberação Miofascial</span>
+                <span class="badge reveal">Craniopuntura</span>
+                <span class="badge reveal">Medicina Tradicional Chinesa</span>
+                <span class="badge reveal">Reiki</span>
+                <span class="badge reveal">Cristaloterapia</span>
+                <span class="badge reveal">Stiper</span>
+                <span class="badge reveal">Cone Hindu</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="formacao-secao">
+        <div class="container">
+            <span class="secao-label reveal">Experiência</span>
+            <h2 class="secao-titulo reveal">Trajetória profissional</h2>
+            <ul class="lista-formacao">
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span><strong>16 anos de docência</strong> em Matemática, Física e Química</span>
+                </li>
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Experiência na organização e comunicação de conteúdos técnicos e científicos</span>
+                </li>
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Trajetória de estudos em massagens, terapias manuais e práticas integrativas desde a adolescência</span>
+                </li>
+                <li class="reveal">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Desenvolvimento da marca <strong>Thi Quiro</strong> e de uma estrutura profissional voltada ao atendimento individualizado em Salesópolis</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2 class="reveal">Vamos conversar?</h2>
+        <p class="reveal">
+            Agende um atendimento e vamos entender juntos o que você precisa.
+        </p>
+        <div class="reveal">
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="btn btn-claro">Agendar Consulta</a>
+            <a href="valores.html" class="btn btn-primario">Ver valores</a>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Thi Quiro</strong> — Quiropraxista & Massoterapeuta</p>
+        <p>Salesópolis, SP e região · Agendamentos 100% online</p>
+        <p>
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a> ·
+            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="https://linktr.ee/thi.quiro" target="_blank" rel="noopener">Todos os links</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">© 2026 Thi Quiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="index.html" class="btn-voltar" aria-label="Voltar ao início">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Início
+    </a>
+
+    <script>
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorRing = document.querySelector('.cursor-ring');
+        const pointerFine = window.matchMedia('(pointer: fine)').matches;
+        if (pointerFine) {
+            document.addEventListener('mousemove', (e) => {
+                cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+                cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+            });
+            document.querySelectorAll('a, button, .badge').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+            });
+        }
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), index * 50);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+
+</body>
+</html>
