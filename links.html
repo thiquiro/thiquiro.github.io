@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links | Thi Quiro</title>
-    <meta name="description" content="Todos os links da Thi Quiro em um só lugar. Agendamento, WhatsApp, Instagram e mais.">
+    <meta name="description" content="Todos os links da Thi Quiro em um só lugar. Agendamento, WhatsApp, Instagram, avaliações e mais.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
@@ -18,12 +18,13 @@
 
         .links-page {
             flex: 1;
-            max-width: 520px;
+            max-width: 560px;
             margin: 0 auto;
             padding: 80px 24px 60px;
             text-align: center;
         }
 
+        /* ===== PERFIL ===== */
         .links-perfil {
             position: relative;
             width: 140px;
@@ -85,9 +86,8 @@
             border-radius: 50px;
             margin-bottom: 24px;
         }
-        .links-local svg {
-            color: var(--terracota);
-        }
+        .links-local svg { color: var(--terracota); }
+
         .links-bio {
             font-size: 15px;
             color: var(--marrom-escuro);
@@ -96,6 +96,7 @@
             padding: 0 8px;
         }
 
+        /* ===== LISTA DE LINKS ===== */
         .links-lista {
             display: flex;
             flex-direction: column;
@@ -162,11 +163,7 @@
             transition: transform 0.4s ease;
         }
         .link-item:hover .link-icon { transform: scale(1.08) rotate(-5deg); }
-        .link-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke-width: 1.8;
-        }
+        .link-icon svg { width: 24px; height: 24px; stroke-width: 1.8; }
 
         .link-texto {
             flex: 1;
@@ -194,6 +191,172 @@
         .link-item:hover .link-arrow { transform: translateX(4px); }
         .link-item.destaque .link-arrow { color: rgba(255, 255, 255, 0.8); }
 
+        /* ===== CARROSSEL DE AVALIAÇÕES ===== */
+        .avaliacoes-secao {
+            margin-bottom: 48px;
+            padding: 0 8px;
+        }
+        .avaliacoes-titulo {
+            font-family: var(--fonte-titulo);
+            font-size: 22px;
+            color: var(--verde-floresta);
+            margin-bottom: 8px;
+        }
+        .avaliacoes-sub {
+            font-size: 14px;
+            color: var(--marrom-escuro);
+            margin-bottom: 24px;
+            opacity: 0.8;
+        }
+        .avaliacoes-estrelas {
+            display: inline-flex;
+            gap: 2px;
+            color: #f5a623;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .carrossel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            background-color: var(--branco);
+            box-shadow: 0 12px 36px rgba(30, 77, 65, 0.1);
+        }
+
+        .carrossel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .avaliacao-card {
+            flex: 0 0 100%;
+            padding: 32px 28px;
+            text-align: left;
+        }
+
+        .avaliacao-estrelas {
+            display: flex;
+            gap: 3px;
+            color: #f5a623;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .avaliacao-texto {
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--cinza-escuro);
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+        }
+        .avaliacao-texto::before {
+            content: '"';
+            font-family: var(--fonte-titulo);
+            font-size: 48px;
+            color: var(--verde-sage);
+            opacity: 0.3;
+            position: absolute;
+            top: -18px;
+            left: -6px;
+            line-height: 1;
+        }
+
+        .avaliacao-autor {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .avaliacao-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--verde-petroleo), var(--verde-floresta));
+            color: var(--branco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--fonte-titulo);
+            font-size: 18px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .avaliacao-nome {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--verde-floresta);
+            line-height: 1.2;
+        }
+        .avaliacao-data {
+            font-size: 12px;
+            color: var(--marrom-escuro);
+            opacity: 0.7;
+        }
+
+        .carrossel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--verde-floresta);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        .carrossel-nav:hover {
+            background-color: var(--verde-floresta);
+            color: var(--branco);
+        }
+        .carrossel-nav.anterior { left: 8px; }
+        .carrossel-nav.proximo { right: 8px; }
+
+        .carrossel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        .carrossel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(30, 77, 65, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+        .carrossel-dot.ativo {
+            background-color: var(--terracota);
+            width: 24px;
+            border-radius: 50px;
+        }
+
+        .avaliacoes-google {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--verde-petroleo);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .avaliacoes-google:hover {
+            color: var(--terracota);
+        }
+
+        /* ===== RODAPÉ ===== */
         .links-footer {
             padding-top: 32px;
             border-top: 1px solid rgba(30, 77, 65, 0.08);
@@ -220,6 +383,8 @@
             .link-item { padding: 16px 20px; }
             .link-icon { width: 42px; height: 42px; }
             .link-titulo { font-size: 16px; }
+            .avaliacao-card { padding: 24px 20px; }
+            .carrossel-nav { width: 30px; height: 30px; }
         }
     </style>
 </head>
@@ -233,6 +398,7 @@
 
     <main class="links-page">
 
+        <!-- ===== PERFIL ===== -->
         <div class="links-perfil reveal">
             <img src="foto-thiago.jpg" alt="Thiago Alvarenga">
         </div>
@@ -253,8 +419,27 @@
             avaliação criteriosa e atenção total ao que você precisa.
         </p>
 
+        <!-- ===== LISTA DE LINKS ===== -->
         <div class="links-lista">
 
+            <!-- GOOGLE MEU NEGÓCIO -->
+            <a href="https://share.google/UWlv7Y2vdkqDHJ4MY" target="_blank" rel="noopener" class="link-item reveal">
+                <span class="link-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </span>
+                <span class="link-texto">
+                    <span class="link-titulo">Google Meu Negócio</span>
+                    <span class="link-sub">Veja todas as avaliações no Google</span>
+                </span>
+                <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </a>
+
+            <!-- AGENDAR (destaque) -->
             <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="link-item destaque reveal">
                 <span class="link-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -274,6 +459,7 @@
                 </svg>
             </a>
 
+            <!-- WHATSAPP -->
             <a href="https://wa.me/5511943107001" target="_blank" rel="noopener" class="link-item reveal">
                 <span class="link-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -289,7 +475,8 @@
                 </svg>
             </a>
 
-            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener" class="link-item reveal">
+            <!-- INSTAGRAM -->
+            <a href="https://www.instagram.com/thi.quiro/" target="_blank" rel="noopener" class="link-item reveal">
                 <span class="link-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="2" width="20" height="20" rx="5"/>
@@ -306,6 +493,74 @@
                 </svg>
             </a>
 
+            <!-- FACEBOOK -->
+            <a href="https://www.facebook.com/thi.quiro" target="_blank" rel="noopener" class="link-item reveal">
+                <span class="link-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                </span>
+                <span class="link-texto">
+                    <span class="link-titulo">Facebook</span>
+                    <span class="link-sub">Siga minha página</span>
+                </span>
+                <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </a>
+
+            <!-- YOUTUBE -->
+            <a href="https://www.youtube.com/@thiquiro" target="_blank" rel="noopener" class="link-item reveal">
+                <span class="link-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                    </svg>
+                </span>
+                <span class="link-texto">
+                    <span class="link-titulo">YouTube</span>
+                    <span class="link-sub">Assista aos vídeos</span>
+                </span>
+                <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </a>
+
+            <!-- E-MAIL -->
+            <a href="mailto:thi.quiro@gmail.com" class="link-item reveal">
+                <span class="link-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="3"/>
+                        <path d="M22 6l-10 7L2 6"/>
+                    </svg>
+                </span>
+                <span class="link-texto">
+                    <span class="link-titulo">E-mail</span>
+                    <span class="link-sub">thi.quiro@gmail.com</span>
+                </span>
+                <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </a>
+
+            <!-- LINKTREE -->
+            <a href="https://linktr.ee/thi.quiro" target="_blank" rel="noopener" class="link-item reveal">
+                <span class="link-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                    </svg>
+                </span>
+                <span class="link-texto">
+                    <span class="link-titulo">Linktree</span>
+                    <span class="link-sub">Versão anterior dos links</span>
+                </span>
+                <svg class="link-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </a>
+
+            <!-- SITE COMPLETO -->
             <a href="index.html" class="link-item reveal">
                 <span class="link-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -323,6 +578,7 @@
                 </svg>
             </a>
 
+            <!-- SOBRE MIM -->
             <a href="sobre.html" class="link-item reveal">
                 <span class="link-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -341,6 +597,173 @@
 
         </div>
 
+        <!-- ===== CARROSSEL DE AVALIAÇÕES ===== -->
+        <section class="avaliacoes-secao reveal">
+            <h2 class="avaliacoes-titulo">O que os pacientes dizem</h2>
+            <p class="avaliacoes-sub">Avaliações reais do Google</p>
+            <div class="avaliacoes-estrelas">★★★★★</div>
+
+            <div class="carrossel" id="carrossel">
+                <div class="carrossel-track" id="carrosselTrack">
+
+                    <!-- AVALIAÇÃO 1 -->
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">
+                            Atendimento especial para cada caso. Ótimo profissional.
+                        </p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar">J</div>
+                            <div>
+                                <div class="avaliacao-nome">Joel Benedito</div>
+                                <div class="avaliacao-data">Há 3 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AVALIAÇÃO 2 -->
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">
+                            Ótimo profissional, atencioso, capacitado. Eu estava com muita dor na coluna
+                            e na musculatura das pernas. Graças ao tratamento, estou bem.
+                        </p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar">S</div>
+                            <div>
+                                <div class="avaliacao-nome">Socrates</div>
+                                <div class="avaliacao-data">Há 4 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AVALIAÇÃO 3 -->
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">
+                            Excelente... ajudou e muito, alívio total.
+                        </p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar">W</div>
+                            <div>
+                                <div class="avaliacao-nome">Wellington Silva</div>
+                                <div class="avaliacao-data">Há 4 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AVALIAÇÃO 4 -->
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">
+                            Eu adorei o Tiago. Fui lá cheio de dor, saí de lá sem dor nenhuma.
+                            Enquanto você sente dor, ele não te libera. Excelente profissional,
+                            parabéns! Ele é muito carismático, deixa a gente super à vontade.
+                            Super indico, excelente profissional.
+                        </p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar">A</div>
+                            <div>
+                                <div class="avaliacao-nome">Andreia Miranda</div>
+                                <div class="avaliacao-data">Há 5 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AVALIAÇÃO 5 -->
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">
+                            Um excelente profissional, atendimento humanizado, muito grata pelo cuidado.
+                        </p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar">A</div>
+                            <div>
+                                <div class="avaliacao-nome">Adriana Souza de Oliveira Conceição</div>
+                                <div class="avaliacao-data">Há 5 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AVALIAÇÃO 6 -->
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">
+                            Muito atencioso. Eu tava todo zoado, nem lembrava como era passar uma noite
+                            dormindo direto. Depois que passei nele, dormi bem como nunca antes, regulou
+                            o meu corpo. Minha musculatura estava toda tensa e dolorida, eu encolhia de
+                            dor no toque, mas ele usou as técnicas certas, e me surpreendi com o resultado.
+                            A dor simplesmente sumiu. Outra coisa, eu nem sabia que meu ombro estava fora
+                            do lugar, e ele colocou. Que alívio! Às vezes a gente vai aguentando achando
+                            que está tudo bem, mas se você está pensando em ir, vá o quanto antes. Cuida
+                            da sua máquina (corpo), porque você só tem esse. Se quebrar, já era.
+                        </p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar">B</div>
+                            <div>
+                                <div class="avaliacao-nome">Bruno Business</div>
+                                <div class="avaliacao-data">Há 8 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AVALIAÇÃO 7 -->
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">
+                            Perfeito.
+                        </p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar">G</div>
+                            <div>
+                                <div class="avaliacao-nome">Gensoir Costa</div>
+                                <div class="avaliacao-data">Há 38 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AVALIAÇÃO 8 -->
+                    <div class="avaliacao-card">
+                        <div class="avaliacao-estrelas">★★★★★</div>
+                        <p class="avaliacao-texto">
+                            Profissional sério e dedicado. Me ajudou muito nas dores.
+                            Super indico de olhos fechados.
+                        </p>
+                        <div class="avaliacao-autor">
+                            <div class="avaliacao-avatar">L</div>
+                            <div>
+                                <div class="avaliacao-nome">Lorenna T</div>
+                                <div class="avaliacao-data">Há 38 semanas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carrossel-nav anterior" id="btnAnterior" aria-label="Avaliação anterior">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+                <button class="carrossel-nav proximo" id="btnProximo" aria-label="Próxima avaliação">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </button>
+
+                <div class="carrossel-dots" id="carrosselDots"></div>
+            </div>
+
+            <a href="https://share.google/UWlv7Y2vdkqDHJ4MY" target="_blank" rel="noopener" class="avaliacoes-google">
+                Ver todas as avaliações no Google
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"/>
+                    <polyline points="7 7 17 7 17 17"/>
+                </svg>
+            </a>
+        </section>
+
+        <!-- ===== RODAPÉ ===== -->
         <div class="links-footer">
             <p>Atendimento em <strong>Salesópolis e região</strong></p>
             <p>© 2026 <a href="index.html">Thi Quiro</a>. Todos os direitos reservados.</p>
@@ -357,6 +780,7 @@
     </a>
 
     <script>
+        // ===== CURSOR =====
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorRing = document.querySelector('.cursor-ring');
         const pointerFine = window.matchMedia('(pointer: fine)').matches;
@@ -370,6 +794,8 @@
                 el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
             });
         }
+
+        // ===== REVEAL =====
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
@@ -380,6 +806,75 @@
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
         revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===== CARROSSEL =====
+        (function() {
+            const track = document.getElementById('carrosselTrack');
+            const slides = track.querySelectorAll('.avaliacao-card');
+            const dotsContainer = document.getElementById('carrosselDots');
+            const btnAnterior = document.getElementById('btnAnterior');
+            const btnProximo = document.getElementById('btnProximo');
+
+            let indiceAtual = 0;
+            const totalSlides = slides.length;
+            const tempoAuto = 8000;
+            let intervalo;
+
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.classList.add('carrossel-dot');
+                dot.setAttribute('aria-label', `Ir para avaliação ${i + 1}`);
+                if (i === 0) dot.classList.add('ativo');
+                dot.addEventListener('click', () => irPara(i));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('.carrossel-dot');
+
+            function irPara(indice) {
+                if (indice < 0) indice = totalSlides - 1;
+                if (indice >= totalSlides) indice = 0;
+                indiceAtual = indice;
+                track.style.transform = `translateX(-${indice * 100}%)`;
+                dots.forEach((dot, i) => dot.classList.toggle('ativo', i === indice));
+            }
+
+            function proximo() { irPara(indiceAtual + 1); }
+            function anterior() { irPara(indiceAtual - 1); }
+
+            function iniciarAuto() {
+                pararAuto();
+                intervalo = setInterval(proximo, tempoAuto);
+            }
+            function pararAuto() {
+                if (intervalo) clearInterval(intervalo);
+            }
+
+            btnProximo.addEventListener('click', () => { proximo(); iniciarAuto(); });
+            btnAnterior.addEventListener('click', () => { anterior(); iniciarAuto(); });
+
+            const carrossel = document.getElementById('carrossel');
+            carrossel.addEventListener('mouseenter', pararAuto);
+            carrossel.addEventListener('mouseleave', iniciarAuto);
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+            carrossel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                pararAuto();
+            });
+            carrossel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) proximo();
+                    else anterior();
+                }
+                iniciarAuto();
+            });
+
+            iniciarAuto();
+        })();
     </script>
 
 </body>
