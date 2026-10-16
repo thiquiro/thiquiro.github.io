@@ -152,6 +152,26 @@
             color: var(--marrom-escuro);
             line-height: 1.7;
         }
+        .btn-voltar-cta {
+            display: inline-block;
+            padding: 16px 40px;
+            font-family: var(--fonte-corpo);
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin: 8px;
+            background-color: transparent;
+            color: var(--branco);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            position: relative;
+        }
+        .btn-voltar-cta:hover {
+            border-color: var(--branco);
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
         @media (max-width: 900px) {
             .hero-sobre { grid-template-columns: 1fr; gap: 48px; text-align: center; padding: 60px 24px 40px; }
             .hero-sobre-texto h1 { font-size: 40px; }
@@ -375,7 +395,8 @@
         </p>
         <div class="reveal">
             <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="btn btn-claro">Agendar Consulta</a>
-            <a href="filosofia.html" class="btn btn-primario">Ver filosofia</a>
+            <a href="index.html" class="btn-voltar-cta">← Voltar ao início</a>
+            <a href="filosofia.html" class="btn btn-primario">Ver filosofia →</a>
         </div>
     </section>
 
