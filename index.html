@@ -5,517 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thi Quiro | Quiropraxista & Massoterapeuta</title>
     <meta name="description" content="Thi Quiro - Quiropraxia e Massoterapia em Salesópolis e região. Agendamentos 100% online.">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --branco: #ffffff;
-            --terracota: #953017;
-            --verde-petroleo: #299285;
-            --verde-floresta: #1e4d41;
-            --verde-sage: #a9b8a2;
-            --marrom-escuro: #5e473e;
-            --bege-claro: #f2ede3;
-            --cinza-escuro: #333333;
-
-            --fonte-titulo: 'Playfair Display SC', serif;
-            --fonte-subtitulo: 'Playfair Display', serif;
-            --fonte-corpo: 'Lato', sans-serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: var(--fonte-corpo);
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--cinza-escuro);
-            background-color: var(--bege-claro);
-            overflow-x: hidden;
-            cursor: none;
-        }
-
-        /* ===== CURSOR PERSONALIZADO ===== */
-        .cursor-dot, .cursor-ring {
-            position: fixed;
-            top: 0; left: 0;
-            pointer-events: none;
-            z-index: 9999;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            will-change: transform;
-        }
-        .cursor-dot {
-            width: 8px; height: 8px;
-            background-color: var(--terracota);
-            transition: transform 0.05s linear;
-        }
-        .cursor-ring {
-            width: 40px; height: 40px;
-            border: 2px solid var(--verde-floresta);
-            transition: transform 0.25s ease-out, width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-        }
-        .cursor-ring.hover {
-            width: 60px; height: 60px;
-            background-color: rgba(41, 146, 133, 0.15);
-            border-color: var(--terracota);
-        }
-        @media (hover: none), (pointer: coarse) {
-            body { cursor: auto; }
-            .cursor-dot, .cursor-ring { display: none; }
-        }
-
-        /* ===== ANIMAÇÕES ===== */
-        @keyframes flutuar {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-25px) rotate(3deg); }
-        }
-        @keyframes morph {
-            0%, 100% { border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%; }
-            33% { border-radius: 45% 55% 40% 60% / 55% 45% 55% 45%; }
-            66% { border-radius: 55% 45% 60% 40% / 45% 55% 45% 55%; }
-        }
-
-        /* ===== BLOBS DECORATIVOS ===== */
-        .blob {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(90px);
-            z-index: -1;
-            pointer-events: none;
-        }
-        .blob-1 {
-            width: 450px; height: 450px;
-            background: var(--verde-sage);
-            top: 8%; left: -120px;
-            opacity: 0.45;
-            animation: flutuar 14s ease-in-out infinite;
-        }
-        .blob-2 {
-            width: 350px; height: 350px;
-            background: var(--terracota);
-            bottom: 15%; right: -100px;
-            opacity: 0.12;
-            animation: flutuar 18s ease-in-out infinite reverse;
-        }
-        .blob-3 {
-            width: 280px; height: 280px;
-            background: var(--verde-petroleo);
-            top: 45%; right: 8%;
-            opacity: 0.12;
-            animation: flutuar 22s ease-in-out infinite;
-        }
-
-        /* ===== SCROLL REVEAL ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== CABEÇALHO ===== */
-        header {
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 14px 0;
-            box-shadow: 0 4px 30px rgba(30, 77, 65, 0.06);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo img { 
-            height: 70px; 
-            width: auto; 
-            display: block;
-            transition: transform 0.4s ease;
-        }
-        .logo:hover img { transform: scale(1.05) rotate(-2deg); }
-
-        nav ul { list-style: none; display: flex; gap: 32px; }
-        nav a {
-            font-family: var(--fonte-corpo);
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--verde-floresta);
-            text-decoration: none;
-            position: relative;
-            padding: 4px 0;
-            transition: color 0.3s;
-        }
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--terracota), var(--verde-petroleo));
-            transition: width 0.4s ease;
-            border-radius: 2px;
-        }
-        nav a:hover { color: var(--terracota); }
-        nav a:hover::after { width: 100%; }
-
-        /* ===== CAPA ===== */
-        .hero-banner {
-            width: 100%;
-            height: 330px;
-            overflow: hidden;
-            background-color: var(--branco);
-        }
-        .hero-banner img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            object-position: 65% center;
-            display: block;
-        }
-
-        /* ===== SEÇÃO PRINCIPAL ===== */
-        .hero {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 90px 24px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-family: var(--fonte-titulo);
-            font-size: 52px;
-            font-weight: 700;
-            color: var(--verde-floresta);
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        .hero .subtitulo {
-            font-family: var(--fonte-subtitulo);
-            font-size: 32px;
-            font-style: italic;
-            color: var(--marrom-escuro);
-            margin-bottom: 32px;
-        }
-        .hero p {
-            font-size: 18px;
-            color: var(--cinza-escuro);
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-        }
-
-        /* ===== BOTÕES ===== */
-        .btn {
-            display: inline-block;
-            padding: 16px 40px;
-            font-family: var(--fonte-corpo);
-            font-size: 17px;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            margin: 8px;
-        }
-        .btn-primario { 
-            background: linear-gradient(135deg, var(--terracota), #b03d1e); 
-            color: var(--branco);
-            box-shadow: 0 8px 24px rgba(149, 48, 23, 0.25);
-        }
-        .btn-primario:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 16px 40px rgba(149, 48, 23, 0.35);
-        }
-        .btn-secundario {
-            background-color: transparent;
-            color: var(--verde-floresta);
-            border: 2px solid var(--verde-floresta);
-        }
-        .btn-secundario:hover {
-            background-color: var(--verde-floresta);
-            color: var(--branco);
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(30, 77, 65, 0.25);
-        }
-
-        /* ===== SEÇÃO SOBRE ===== */
-        .sobre {
-            background-color: var(--branco);
-            padding: 120px 24px;
-            position: relative;
-        }
-        .sobre-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.3fr;
-            gap: 80px;
-            align-items: center;
-        }
-        .foto-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .foto-wrapper::before {
-            content: '';
-            position: absolute;
-            width: 110%;
-            height: 110%;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--verde-sage), var(--verde-petroleo));
-            opacity: 0.25;
-            filter: blur(40px);
-            z-index: 0;
-        }
-        .foto-perfil-img {
-            width: 340px;
-            height: 340px;
-            object-fit: cover;
-            object-position: center;
-            animation: morph 12s ease-in-out infinite;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 30px 80px rgba(30, 77, 65, 0.25);
-            border: 4px solid var(--branco);
-        }
-
-        .sobre-texto .label {
-            font-family: var(--fonte-corpo);
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--terracota);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            display: block;
-        }
-        .sobre-texto h2 {
-            font-family: var(--fonte-titulo);
-            font-size: 42px;
-            color: var(--verde-floresta);
-            margin-bottom: 8px;
-            line-height: 1.2;
-        }
-        .sobre-texto .cargo {
-            font-family: var(--fonte-subtitulo);
-            font-size: 22px;
-            font-style: italic;
-            color: var(--verde-petroleo);
-            margin-bottom: 28px;
-            display: block;
-        }
-        .sobre-texto p {
-            font-size: 17px;
-            color: var(--cinza-escuro);
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        .sobre-lista {
-            list-style: none;
-            margin: 28px 0;
-        }
-        .sobre-lista li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 16px;
-            color: var(--marrom-escuro);
-            margin-bottom: 12px;
-            padding-left: 4px;
-        }
-        .sobre-lista li svg {
-            flex-shrink: 0;
-            color: var(--verde-petroleo);
-        }
-
-        /* ===== ACESSO RÁPIDO ===== */
-        .acesso-rapido { 
-            background-color: var(--bege-claro); 
-            padding: 120px 24px;
-        }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .secao-titulo {
-            font-family: var(--fonte-corpo);
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--verde-floresta);
-            text-align: center;
-            margin-bottom: 56px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        .secao-titulo::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--terracota), var(--verde-petroleo));
-            margin: 16px auto 0;
-            border-radius: 3px;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 28px;
-        }
-        .card {
-            background: var(--branco);
-            padding: 40px 28px;
-            border-radius: 32px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--cinza-escuro);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 4px;
-            background: linear-gradient(90deg, var(--terracota), var(--verde-petroleo), var(--verde-sage));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
-        }
-        .card:hover {
-            border-color: var(--verde-sage);
-            transform: translateY(-8px);
-            box-shadow: 0 24px 60px rgba(30, 77, 65, 0.15);
-        }
-        .card:hover::before { transform: scaleX(1); }
-        
-        .card .icone {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 64px; height: 64px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(41, 146, 133, 0.12), rgba(30, 77, 65, 0.08));
-            color: var(--verde-floresta);
-            margin-bottom: 20px;
-            transition: transform 0.5s ease, background 0.5s ease;
-        }
-        .card .icone svg {
-            width: 30px; height: 30px;
-            stroke-width: 1.8;
-        }
-        .card:hover .icone { 
-            transform: scale(1.1) rotate(-5deg);
-            background: linear-gradient(135deg, rgba(149, 48, 23, 0.15), rgba(41, 146, 133, 0.15));
-            color: var(--terracota);
-        }
-        .card h3 {
-            font-family: var(--fonte-corpo);
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--verde-floresta);
-            margin-bottom: 8px;
-        }
-        .card p { font-size: 16px; color: var(--marrom-escuro); }
-
-        /* ===== CITAÇÃO ===== */
-        .citacao {
-            background: linear-gradient(135deg, var(--verde-floresta), var(--verde-petroleo));
-            padding: 100px 24px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-radius: 60px 60px 0 0;
-        }
-        .citacao::before {
-            content: '"';
-            position: absolute;
-            top: 0; left: 50%;
-            transform: translateX(-50%);
-            font-family: var(--fonte-titulo);
-            font-size: 220px;
-            color: rgba(255, 255, 255, 0.08);
-            line-height: 1;
-            pointer-events: none;
-        }
-        .citacao blockquote {
-            font-family: var(--fonte-subtitulo);
-            font-size: 28px;
-            font-style: italic;
-            color: var(--branco);
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.5;
-            position: relative;
-        }
-
-        /* ===== RODAPÉ ===== */
-        footer {
-            background-color: var(--marrom-escuro);
-            color: var(--bege-claro);
-            padding: 60px 24px 40px;
-            text-align: center;
-        }
-        footer p { font-size: 16px; margin-bottom: 10px; }
-        footer a { 
-            color: var(--verde-sage); 
-            text-decoration: none; 
-            transition: color 0.3s;
-            border-bottom: 1px solid transparent;
-        }
-        footer a:hover { 
-            color: var(--branco); 
-            border-bottom-color: var(--branco);
-        }
-
-        /* ===== RESPONSIVO ===== */
-        @media (max-width: 900px) {
-            .sobre-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-                text-align: center;
-            }
-            .sobre-lista li { justify-content: center; }
-            .foto-perfil-img { width: 240px; height: 240px; }
-            .sobre-texto h2 { font-size: 34px; }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 34px; }
-            .hero .subtitulo { font-size: 22px; }
-            .header-container { flex-direction: column; gap: 12px; }
-            nav ul { gap: 16px; flex-wrap: wrap; justify-content: center; }
-            nav a { font-size: 14px; }
-            .logo img { height: 55px; }
-            .hero-banner { height: 180px; }
-            .citacao { padding: 70px 24px; }
-            .citacao blockquote { font-size: 22px; }
-            .btn { padding: 14px 28px; font-size: 16px; }
-            .card { padding: 32px 20px; border-radius: 24px; }
-            .blob { display: none; }
-            .sobre { padding: 80px 24px; }
-            .acesso-rapido { padding: 80px 24px; }
-        }
-    </style>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-    <!-- Cursor personalizado -->
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
-
-    <!-- Blobs decorativos -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
@@ -528,10 +26,11 @@
             <nav>
                 <ul>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="filosofia.html">Filosofia</a></li>
+                    <li><a href="metodo.html">Método</a></li>
+                    <li><a href="formacao.html">Formação</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="https://cal.com/thi.quiro" class="nav-agendar" target="_blank" rel="noopener">Agendar</a></li>
                 </ul>
             </nav>
         </div>
@@ -554,8 +53,7 @@
         </div>
     </section>
 
-    <!-- ===== SEÇÃO SOBRE ===== -->
-    <section class="sobre" id="sobre">
+    <section class="sobre">
         <div class="sobre-grid">
             <div class="foto-wrapper reveal">
                 <img src="foto-thiago.jpg" class="foto-perfil-img" alt="Thiago Alvarenga - Quiropraxista e Massoterapeuta">
@@ -591,7 +89,7 @@
         </div>
     </section>
 
-    <section class="acesso-rapido" id="servicos">
+    <section class="acesso-rapido">
         <div class="container">
             <h2 class="secao-titulo reveal">Acesse Rápido</h2>
             <div class="cards">
@@ -628,15 +126,15 @@
                     <h3>Instagram</h3>
                     <p>@thi.quiro</p>
                 </a>
-                <a href="#blog" class="card reveal">
+                <a href="sobre.html" class="card reveal">
                     <span class="icone">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
                             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
                         </svg>
                     </span>
-                    <h3>Blog</h3>
-                    <p>Dicas de saúde e bem-estar</p>
+                    <h3>Sobre</h3>
+                    <p>Conheça minha história</p>
                 </a>
             </div>
         </div>
@@ -648,52 +146,40 @@
         </blockquote>
     </section>
 
-    <footer id="contato">
+    <footer>
         <p><strong>Thi Quiro</strong> — Quiropraxista & Massoterapeuta</p>
         <p>Salesópolis, SP e região · Agendamentos 100% online</p>
         <p>
-            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a> · 
-            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> · 
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a> ·
+            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> ·
             <a href="https://linktr.ee/thi.quiro" target="_blank" rel="noopener">Todos os links</a>
         </p>
         <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">© 2026 Thi Quiro. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // ===== CURSOR PERSONALIZADO =====
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorRing = document.querySelector('.cursor-ring');
         const pointerFine = window.matchMedia('(pointer: fine)').matches;
-
         if (pointerFine) {
             document.addEventListener('mousemove', (e) => {
                 cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
                 cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
             });
-
-            const hoverables = document.querySelectorAll('a, button, .card');
-            hoverables.forEach(el => {
+            document.querySelectorAll('a, button, .card').forEach(el => {
                 el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
                 el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
             });
         }
-
-        // ===== SCROLL REVEAL =====
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 60);
+                    setTimeout(() => entry.target.classList.add('visible'), index * 60);
                     revealObserver.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.12,
-            rootMargin: '0px 0px -60px 0px'
-        });
-
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
         revealElements.forEach(el => revealObserver.observe(el));
     </script>
 
