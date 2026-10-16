@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por que a dor não é simples | Thi Quiro</title>
+    <meta name="description" content="A dor não é apenas um sinal de lesão. Entenda o que a ciência diz sobre a complexidade da experiência dolorosa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        .artigo-hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 24px 40px;
+            text-align: center;
+        }
+        .artigo-categoria {
+            display: inline-block;
+            font-family: var(--fonte-corpo);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--terracota);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background-color: rgba(149, 48, 23, 0.08);
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+        .artigo-hero h1 {
+            font-family: var(--fonte-titulo);
+            font-size: 46px;
+            color: var(--verde-floresta);
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+        .artigo-meta {
+            font-size: 14px;
+            color: var(--marrom-escuro);
+            opacity: 0.7;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .artigo-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .artigo-meta svg {
+            color: var(--verde-petroleo);
+        }
+
+        .artigo-corpo {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+            font-size: 18px;
+            line-height: 1.9;
+            color: var(--cinza-escuro);
+        }
+        .artigo-corpo p {
+            margin-bottom: 24px;
+        }
+        .artigo-corpo p:first-of-type::first-letter {
+            font-family: var(--fonte-titulo);
+            font-size: 68px;
+            line-height: 0.9;
+            color: var(--terracota);
+            float: left;
+            margin: 8px 12px 0 0;
+        }
+        .artigo-corpo h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 30px;
+            color: var(--verde-floresta);
+            margin: 48px 0 20px;
+            line-height: 1.3;
+        }
+        .artigo-corpo h3 {
+            font-family: var(--fonte-corpo);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--verde-floresta);
+            margin: 36px 0 16px;
+        }
+        .artigo-corpo strong {
+            color: var(--verde-floresta);
+            font-weight: 700;
+        }
+        .artigo-corpo em {
+            color: var(--marrom-escuro);
+        }
+
+        .artigo-citacao {
+            border-left: 4px solid var(--terracota);
+            padding: 20px 24px;
+            margin: 32px 0;
+            background-color: rgba(242, 237, 227, 0.5);
+            border-radius: 0 16px 16px 0;
+            font-family: var(--fonte-subtitulo);
+            font-size: 20px;
+            font-style: italic;
+            color: var(--marrom-escuro);
+            line-height: 1.6;
+        }
+
+        .artigo-referencias {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 48px 24px 60px;
+            border-top: 2px solid rgba(30, 77, 65, 0.1);
+        }
+        .artigo-referencias h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 24px;
+            color: var(--verde-floresta);
+            margin-bottom: 24px;
+        }
+        .artigo-referencias ul {
+            list-style: none;
+            padding: 0;
+        }
+        .artigo-referencias li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--marrom-escuro);
+            margin-bottom: 16px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .artigo-referencias li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--verde-sage);
+        }
+        .artigo-referencias a {
+            color: var(--verde-petroleo);
+            text-decoration: none;
+            word-break: break-word;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .artigo-referencias a:hover {
+            border-bottom-color: var(--verde-petroleo);
+        }
+
+        .artigo-navegacao {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .artigo-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            background-color: var(--branco);
+            color: var(--verde-floresta);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 16px rgba(30, 77, 65, 0.08);
+        }
+        .artigo-nav-btn:hover {
+            border-color: var(--verde-floresta);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(30, 77, 65, 0.15);
+        }
+        .artigo-nav-btn.proximo {
+            margin-left: auto;
+        }
+
+        @media (max-width: 700px) {
+            .artigo-hero h1 { font-size: 32px; }
+            .artigo-corpo { font-size: 17px; }
+            .artigo-corpo p:first-of-type::first-letter { font-size: 52px; }
+            .artigo-corpo h2 { font-size: 24px; margin: 36px 0 16px; }
+            .artigo-citacao { font-size: 17px; padding: 16px 20px; }
+            .artigo-navegacao { flex-direction: column; }
+            .artigo-nav-btn.proximo { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Thi Quiro - Quiropraxista e Massoterapeuta">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="filosofia.html">Filosofia</a></li>
+                    <li><a href="metodo.html">Método</a></li>
+                    <li><a href="formacao.html">Formação</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="links.html">Links</a></li>
+                    <li><a href="https://cal.com/thi.quiro" class="nav-agendar" target="_blank" rel="noopener">Agendar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <article>
+        <div class="artigo-hero">
+            <span class="artigo-categoria reveal">Filosofia da Dor</span>
+            <h1 class="reveal">Por que a dor não é simples</h1>
+            <div class="artigo-meta reveal">
+                <span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Leitura de 6 minutos
+                </span>
+                <span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Thiago Alvarenga
+                </span>
+            </div>
+        </div>
+
+        <div class="artigo-corpo">
+            <p class="reveal">
+                Quando alguém sente dor, o primeiro impulso é procurar uma causa única. "Foi a postura errada",
+                "foi o esforço de ontem", "é a vértebra fora do lugar". Essa busca por uma explicação simples
+                dá uma sensação de controle, como se identificar o culpado resolvesse o problema. Só que a
+                ciência mostra que a história é bem mais complicada do que parece.
+            </p>
+
+            <h2 class="reveal">O que é a dor, afinal</h2>
+
+            <p class="reveal">
+                A <strong>International Association for the Study of Pain</strong> (IASP), principal referência
+                mundial no estudo da dor, define o fenômeno como uma "experiência sensorial e emocional
+                desagradável associada, ou semelhante àquela associada, a dano tissular real ou potencial".
+                Essa definição é importante por um motivo específico: ela deixa claro que a dor não é
+                apenas um sinal elétrico que viaja do tecido até o cérebro. É uma <strong>experiência</strong>,
+                construída pelo cérebro a partir de múltiplas informações.
+            </p>
+
+            <p class="reveal">
+                A palavra "experiência" aqui não é um detalhe poético. Ela significa que a dor envolve
+                sensações, emoções, memórias, expectativas e o contexto em que a pessoa está inserida.
+                Dois indivíduos com a mesma lesão podem sentir dores completamente diferentes. E a recíproca
+                também é verdadeira: é possível ter dor intensa sem nenhuma lesão detectável em exames de imagem.
+            </p>
+
+            <h2 class="reveal">Dor e lesão não andam necessariamente juntas</h2>
+
+            <p class="reveal">
+                Um dos achados mais reveladores da pesquisa moderna em dor vem de estudos com exames de imagem.
+                Ao escanear a coluna de pessoas sem nenhum sintoma, pesquisadores encontraram uma quantidade
+                surpreendente de alterações estruturais. Hérnias de disco, protrusões, degenerações e
+                desgastes aparecem em pessoas que nunca sentiram dor nenhuma.
+            </p>
+
+            <p class="reveal">
+                O estudo mais citado sobre o tema foi publicado por Brinjikji e colaboradores em 2015,
+                na revista <em>American Journal of Neuroradiology</em>. Os autores reuniram dados de mais de
+                três mil pessoas sem sintomas e mostraram que a prevalência de degeneração de disco aumenta
+                com a idade, mesmo em pessoas que nunca relataram dor. Em outras palavras, ter uma alteração
+                na coluna não significa necessariamente ter dor. E ter dor não significa necessariamente
+                ter uma alteração grave.
+            </p>
+
+            <div class="artigo-citacao reveal">
+                A intensidade da dor nem sempre corresponde à extensão de uma alteração estrutural.
+            </div>
+
+            <h2 class="reveal">O modelo biopsicossocial</h2>
+
+            <p class="reveal">
+                Para compreender essa complexidade, a ciência da dor adota hoje o chamado <strong>modelo
+                biopsicossocial</strong>. Em vez de olhar apenas para o tecido lesionado, esse modelo considera
+                que a experiência dolorosa é influenciada por três grandes grupos de fatores.
+            </p>
+
+            <p class="reveal">
+                O primeiro grupo é o <strong>biológico</strong>, que inclui a condição dos tecidos, a inflamação,
+                o funcionamento do sistema nervoso, alterações de sensibilidade e processos como a sensibilização
+                central, em que o sistema nervoso passa a amplificar sinais que antes não geravam dor.
+            </p>
+
+            <p class="reveal">
+                O segundo grupo é o <strong>psicológico</strong>, que envolve fatores como ansiedade, estresse,
+                depressão, medo do movimento, catastrofização, crenças sobre a dor e expectativas em relação
+                à recuperação. Uma pessoa que interpreta a dor como sinal de algo grave tende a sentir mais dor
+                do que alguém que a interpreta como algo passageiro, mesmo quando as condições físicas são
+                semelhantes.
+            </p>
+
+            <p class="reveal">
+                O terceiro grupo é o <strong>social</strong>, que reúne fatores como trabalho, relações familiares,
+                apoio social, situação financeira e contexto cultural. Todos esses elementos podem modular a
+                forma como a dor é percebida e como ela interfere na vida da pessoa.
+            </p>
+
+            <h2 class="reveal">O que isso significa na prática</h2>
+
+            <p class="reveal">
+                Se a dor é multifatorial, o tratamento também precisa ser. Reduzir a queixa de alguém a uma
+                vértebra desalinhada, a uma contratura ou a uma única alteração mecânica é simplificar demais
+                um fenômeno que envolve múltiplas dimensões. Essa simplificação pode até gerar alívio momentâneo,
+                mas raramente resolve o problema de forma duradoura.
+            </p>
+
+            <p class="reveal">
+                É por isso que não trato todos os pacientes da mesma forma e não aplico uma sequência
+                padronizada de técnicas em todo mundo. Cada pessoa chega com uma história, um contexto,
+                expectativas e respostas próprias. Compreender essa individualidade é o primeiro passo
+                para um cuidado responsável.
+            </p>
+
+            <p class="reveal">
+                Também é por isso que a avaliação vem antes da intervenção. Entender o que está acontecendo,
+                quais fatores podem estar envolvidos e quais recursos fazem sentido naquele caso específico
+                é mais importante do que aplicar uma manobra impressionante. O alívio pode acontecer, mas
+                ele precisa vir acompanhado de compreensão.
+            </p>
+
+            <h2 class="reveal">Um convite à reflexão</h2>
+
+            <p class="reveal">
+                Se você convive com dor, vale se perguntar: quais fatores, além da estrutura física, podem
+                estar contribuindo para essa experiência? Como está seu sono, seu nível de estresse, sua
+                relação com o movimento, suas expectativas em relação ao tratamento? Essas perguntas não
+                substituem uma avaliação profissional, mas ajudam a ampliar o olhar sobre o próprio corpo.
+            </p>
+
+            <p class="reveal">
+                A dor merece atenção. Mas ela não deve ser tratada como se tivesse uma única explicação
+                possível. Quanto mais entendemos a complexidade do fenômeno, mais chances temos de cuidar
+                dele de forma realmente eficaz.
+            </p>
+        </div>
+
+        <div class="artigo-referencias">
+            <h2 class="reveal">Referências científicas</h2>
+            <ul>
+                <li class="reveal">
+                    International Association for the Study of Pain. <em>IASP Terminology</em>. Disponível em:
+                    <a href="https://www.iasp-pain.org/resources/terminology/" target="_blank" rel="noopener">iasp-pain.org</a>.
+                </li>
+                <li class="reveal">
+                    BRINJIKJI, W. et al. Systematic literature review of imaging features of spinal degeneration
+                    in asymptomatic populations. <em>American Journal of Neuroradiology</em>, v. 36, n. 4, p. 811-816, 2015.
+                    Disponível em: <a href="https://www.ajnr.org/content/36/4/811" target="_blank" rel="noopener">ajnr.org</a>.
+                </li>
+                <li class="reveal">
+                    GATCHEL, R. J.; PENG, Y. B.; PETERS, M. L. The biopsychosocial approach to chronic pain:
+                    scientific advances and future directions. <em>Psychological Bulletin</em>, v. 133, n. 4, p. 581-624, 2007.
+                </li>
+                <li class="reveal">
+                    WOOLF, C. J. Central sensitization: implications for the diagnosis and treatment of pain.
+                    <em>Pain</em>, v. 152, n. 3, p. S2-S15, 2011.
+                </li>
+                <li class="reveal">
+                    VLAEYEN, J. W. S.; LINTON, S. J. Fear-avoidance and its consequences in chronic
+                    musculoskeletal pain: a state of the art. <em>Pain</em>, v. 85, n. 3, p. 317-332, 2000.
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <nav class="artigo-navegacao">
+        <a href="blog.html" class="artigo-nav-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"/>
+                <polyline points="12 19 5 12 12 5"/>
+            </svg>
+            Voltar ao blog
+        </a>
+        <a href="blog-quiropraxia-dor-lombar.html" class="artigo-nav-btn proximo">
+            Próximo artigo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+            </svg>
+        </a>
+    </nav>
+
+    <section class="cta">
+        <h2 class="reveal">Fez sentido para você?</h2>
+        <p class="reveal">
+            Se você convive com dor e quer entender melhor o seu caso, será um prazer conversar.
+        </p>
+        <div class="reveal">
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="btn btn-claro">Agendar Consulta</a>
+            <a href="index.html" class="btn-voltar-cta">← Voltar ao início</a>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Thi Quiro</strong> | Quiropraxista e Massoterapeuta</p>
+        <p>Salesópolis, SP e região | Agendamentos 100% online</p>
+        <p>
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a> ·
+            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="links.html">Todos os links</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">© 2026 Thi Quiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="index.html" class="btn-voltar" aria-label="Voltar ao início">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Início
+    </a>
+
+    <script>
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorRing = document.querySelector('.cursor-ring');
+        const pointerFine = window.matchMedia('(pointer: fine)').matches;
+        if (pointerFine) {
+            document.addEventListener('mousemove', (e) => {
+                cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+                cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+            });
+            document.querySelectorAll('a, button').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+            });
+        }
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), index * 60);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+
+</body>
+</html>
