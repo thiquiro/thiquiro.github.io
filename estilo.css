@@ -169,7 +169,7 @@ section { padding: 100px 24px; }
     border-radius: 3px;
 }
 
-/* ===== PAGE HERO (subpáginas) ===== */
+/* ===== PAGE HERO ===== */
 .page-hero {
     max-width: 900px; margin: 0 auto;
     padding: 100px 24px 60px;
@@ -200,20 +200,22 @@ section { padding: 100px 24px; }
     line-height: 1.6;
 }
 
-/* ===== HERO BANNER (capa da home) ===== */
+/* ===== HERO BANNER (CAPA) ===== */
 .hero-banner {
-    width: 100%; height: 330px;
+    width: 100%;
+    height: 330px;
     overflow: hidden;
     background-color: var(--branco);
 }
 .hero-banner img {
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: 65% center;
     display: block;
 }
 
-/* ===== HERO (home) ===== */
+/* ===== HERO (HOME) ===== */
 .hero {
     max-width: 900px; margin: 0 auto;
     padding: 90px 24px;
@@ -408,7 +410,7 @@ section { padding: 100px 24px; }
     box-shadow: 0 16px 40px rgba(255, 255, 255, 0.3);
 }
 
-/* ===== BOTÃO VOLTAR AO INÍCIO ===== */
+/* ===== BOTÃO VOLTAR AO INÍCIO (flutuante) ===== */
 .btn-voltar {
     position: fixed;
     bottom: 32px; left: 32px;
@@ -432,6 +434,28 @@ section { padding: 100px 24px; }
 }
 .btn-voltar svg { transition: transform 0.3s ease; }
 .btn-voltar:hover svg { transform: translateX(-4px); }
+
+/* ===== BOTÃO VOLTAR NO CTA (transparente) ===== */
+.btn-voltar-cta {
+    display: inline-block;
+    padding: 16px 40px;
+    font-family: var(--fonte-corpo);
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 8px;
+    background-color: transparent;
+    color: var(--branco);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+}
+.btn-voltar-cta:hover {
+    border-color: var(--branco);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+}
 
 /* ===== CTA ===== */
 .cta {
