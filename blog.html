@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Thi Quiro</title>
+    <meta name="description" content="Reflexões sobre corpo, dor e cuidado. Artigos com base científica sobre quiropraxia, massoterapia e terapias manuais.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        .blog-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .post-card {
+            background-color: var(--branco);
+            border-radius: 28px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--cinza-escuro);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .post-card:hover {
+            border-color: var(--verde-sage);
+            transform: translateY(-8px);
+            box-shadow: 0 24px 60px rgba(30, 77, 65, 0.15);
+        }
+
+        .post-card-header {
+            padding: 40px 32px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, var(--bege-claro), #faf6ef);
+            position: relative;
+            overflow: hidden;
+        }
+        .post-card-header::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--verde-sage), var(--verde-petroleo));
+            opacity: 0.15;
+            filter: blur(30px);
+            top: -50px;
+            right: -50px;
+        }
+        .post-card-icon {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--verde-floresta), var(--verde-petroleo));
+            color: var(--branco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 12px 30px rgba(30, 77, 65, 0.25);
+            transition: transform 0.5s ease;
+        }
+        .post-card:hover .post-card-icon {
+            transform: scale(1.08) rotate(-5deg);
+        }
+        .post-card-icon svg {
+            width: 42px;
+            height: 42px;
+            stroke-width: 1.6;
+        }
+
+        .post-card-body {
+            padding: 28px 32px 36px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-card-categoria {
+            font-family: var(--fonte-corpo);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--terracota);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .post-card-titulo {
+            font-family: var(--fonte-titulo);
+            font-size: 24px;
+            color: var(--verde-floresta);
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+
+        .post-card-resumo {
+            font-size: 16px;
+            color: var(--marrom-escuro);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+
+        .post-card-ler {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--verde-petroleo);
+            transition: gap 0.4s ease;
+            align-self: flex-start;
+        }
+        .post-card:hover .post-card-ler {
+            gap: 14px;
+            color: var(--terracota);
+        }
+
+        .blog-em-breve {
+            max-width: 800px;
+            margin: 80px auto 0;
+            padding: 48px 32px;
+            background-color: rgba(41, 146, 133, 0.06);
+            border-radius: 28px;
+            text-align: center;
+            border: 2px dashed rgba(41, 146, 133, 0.2);
+        }
+        .blog-em-breve h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 24px;
+            color: var(--verde-floresta);
+            margin-bottom: 12px;
+        }
+        .blog-em-breve p {
+            font-size: 16px;
+            color: var(--marrom-escuro);
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Thi Quiro - Quiropraxista e Massoterapeuta">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="filosofia.html">Filosofia</a></li>
+                    <li><a href="metodo.html">Método</a></li>
+                    <li><a href="formacao.html">Formação</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="links.html">Links</a></li>
+                    <li><a href="https://cal.com/thi.quiro" class="nav-agendar" target="_blank" rel="noopener">Agendar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <span class="label reveal">Blog</span>
+        <h1 class="reveal">Reflexões sobre<br>corpo, dor e cuidado</h1>
+        <p class="lead reveal">
+            Artigos escritos com base em evidências científicas, em linguagem acessível,
+            para ajudar você a compreender melhor o seu próprio corpo.
+        </p>
+    </section>
+
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="blog-grid">
+
+                <a href="blog-dor-nao-e-simples.html" class="post-card reveal">
+                    <div class="post-card-header">
+                        <div class="post-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2z"/>
+                                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="post-card-body">
+                        <span class="post-card-categoria">Filosofia da Dor</span>
+                        <h2 class="post-card-titulo">Por que a dor não é simples</h2>
+                        <p class="post-card-resumo">
+                            A dor não é apenas um sinal de lesão. É uma experiência complexa, influenciada
+                            por fatores biológicos, emocionais e contextuais. Entenda o que a ciência diz
+                            e por que essa visão muda a forma de tratar.
+                        </p>
+                        <span class="post-card-ler">
+                            Ler artigo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="blog-quiropraxia-dor-lombar.html" class="post-card reveal">
+                    <div class="post-card-header">
+                        <div class="post-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20"/>
+                                <path d="M9 5h6"/>
+                                <path d="M9 9h6"/>
+                                <path d="M9 13h6"/>
+                                <path d="M9 17h6"/>
+                                <circle cx="12" cy="5" r="2.5"/>
+                                <circle cx="12" cy="19" r="2.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="post-card-body">
+                        <span class="post-card-categoria">Evidência Científica</span>
+                        <h2 class="post-card-titulo">O que a ciência realmente diz sobre quiropraxia para dor lombar</h2>
+                        <p class="post-card-resumo">
+                            Entre promessas e críticas, o que os estudos mostram sobre a eficácia da
+                            manipulação vertebral para dores na lombar? Uma análise honesta das
+                            evidências disponíveis.
+                        </p>
+                        <span class="post-card-ler">
+                            Ler artigo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+
+                <a href="blog-quiropraxia-seguranca.html" class="post-card reveal">
+                    <div class="post-card-header">
+                        <div class="post-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <polyline points="9 12 11 14 15 10"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="post-card-body">
+                        <span class="post-card-categoria">Segurança</span>
+                        <h2 class="post-card-titulo">Quiropraxia e segurança: o que os estudos mostram sobre efeitos adversos</h2>
+                        <p class="post-card-resumo">
+                            A manipulação vertebral assusta muita gente. Será que é perigoso? O que a
+                            literatura científica mostra sobre eventos adversos e qual o papel da
+                            avaliação prévia.
+                        </p>
+                        <span class="post-card-ler">
+                            Ler artigo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="blog-em-breve reveal">
+                <h3>Novos artigos em breve</h3>
+                <p>
+                    Este espaço está em construção contínua. Novos temas serão publicados
+                    aos poucos, sempre com base em evidências científicas e em linguagem acessível.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2 class="reveal">Ficou com alguma dúvida?</h2>
+        <p class="reveal">
+            Se algo aqui fez sentido para você, será um prazer conversar pessoalmente.
+        </p>
+        <div class="reveal">
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="btn btn-claro">Agendar Consulta</a>
+            <a href="index.html" class="btn-voltar-cta">← Voltar ao início</a>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Thi Quiro</strong> | Quiropraxista e Massoterapeuta</p>
+        <p>Salesópolis, SP e região | Agendamentos 100% online</p>
+        <p>
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a> ·
+            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="links.html">Todos os links</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">© 2026 Thi Quiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="index.html" class="btn-voltar" aria-label="Voltar ao início">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Início
+    </a>
+
+    <script>
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorRing = document.querySelector('.cursor-ring');
+        const pointerFine = window.matchMedia('(pointer: fine)').matches;
+        if (pointerFine) {
+            document.addEventListener('mousemove', (e) => {
+                cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+                cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+            });
+            document.querySelectorAll('a, button, .post-card').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+            });
+        }
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), index * 80);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+
+</body>
+</html>
