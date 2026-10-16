@@ -3,196 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre | Thi Quiro - Quiropraxista & Massoterapeuta</title>
+    <title>Sobre | Thi Quiro</title>
     <meta name="description" content="Conheça Thiago Alvarenga, responsável pela Thi Quiro. Quiropraxia e cuidado corporal individualizado em Salesópolis/SP.">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="estilo.css">
     <style>
-        :root {
-            --branco: #ffffff;
-            --terracota: #953017;
-            --verde-petroleo: #299285;
-            --verde-floresta: #1e4d41;
-            --verde-sage: #a9b8a2;
-            --marrom-escuro: #5e473e;
-            --bege-claro: #f2ede3;
-            --cinza-escuro: #333333;
-            --fonte-titulo: 'Playfair Display SC', serif;
-            --fonte-subtitulo: 'Playfair Display', serif;
-            --fonte-corpo: 'Lato', sans-serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: var(--fonte-corpo);
-            font-size: 18px;
-            line-height: 1.7;
-            color: var(--cinza-escuro);
-            background-color: var(--bege-claro);
-            overflow-x: hidden;
-            cursor: none;
-        }
-
-        /* ===== CURSOR ===== */
-        .cursor-dot, .cursor-ring {
-            position: fixed;
-            top: 0; left: 0;
-            pointer-events: none;
-            z-index: 9999;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            will-change: transform;
-        }
-        .cursor-dot {
-            width: 8px; height: 8px;
-            background-color: var(--terracota);
-            transition: transform 0.05s linear;
-        }
-        .cursor-ring {
-            width: 40px; height: 40px;
-            border: 2px solid var(--verde-floresta);
-            transition: transform 0.25s ease-out, width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-        }
-        .cursor-ring.hover {
-            width: 60px; height: 60px;
-            background-color: rgba(41, 146, 133, 0.15);
-            border-color: var(--terracota);
-        }
-        @media (hover: none), (pointer: coarse) {
-            body { cursor: auto; }
-            .cursor-dot, .cursor-ring { display: none; }
-        }
-
-        /* ===== ANIMAÇÕES ===== */
-        @keyframes flutuar {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-25px) rotate(3deg); }
-        }
-        @keyframes morph {
-            0%, 100% { border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%; }
-            33% { border-radius: 45% 55% 40% 60% / 55% 45% 55% 45%; }
-            66% { border-radius: 55% 45% 60% 40% / 45% 55% 45% 55%; }
-        }
-
-        /* ===== BLOBS ===== */
-        .blob {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(90px);
-            z-index: -1;
-            pointer-events: none;
-        }
-        .blob-1 { width: 450px; height: 450px; background: var(--verde-sage); top: 8%; left: -120px; opacity: 0.4; animation: flutuar 14s ease-in-out infinite; }
-        .blob-2 { width: 350px; height: 350px; background: var(--terracota); bottom: 15%; right: -100px; opacity: 0.12; animation: flutuar 18s ease-in-out infinite reverse; }
-        .blob-3 { width: 280px; height: 280px; background: var(--verde-petroleo); top: 45%; right: 8%; opacity: 0.1; animation: flutuar 22s ease-in-out infinite; }
-
-        /* ===== REVEAL ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        /* ===== CABEÇALHO ===== */
-        header {
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 14px 0;
-            box-shadow: 0 4px 30px rgba(30, 77, 65, 0.06);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo img { height: 70px; width: auto; display: block; transition: transform 0.4s ease; }
-        .logo:hover img { transform: scale(1.05) rotate(-2deg); }
-
-        nav ul { list-style: none; display: flex; gap: 32px; }
-        nav a {
-            font-family: var(--fonte-corpo);
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--verde-floresta);
-            text-decoration: none;
-            position: relative;
-            padding: 4px 0;
-            transition: color 0.3s;
-        }
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--terracota), var(--verde-petroleo));
-            transition: width 0.4s ease;
-            border-radius: 2px;
-        }
-        nav a:hover { color: var(--terracota); }
-        nav a:hover::after { width: 100%; }
-        nav a.ativo { color: var(--terracota); }
-        nav a.ativo::after { width: 100%; }
-
-        /* ===== HERO SOBRE ===== */
         .hero-sobre {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1200px; margin: 0 auto;
             padding: 100px 24px 80px;
             display: grid;
             grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
-            align-items: center;
+            gap: 80px; align-items: center;
         }
-        .foto-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .foto-wrapper::before {
-            content: '';
-            position: absolute;
-            width: 110%; height: 110%;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--verde-sage), var(--verde-petroleo));
-            opacity: 0.25;
-            filter: blur(40px);
-            z-index: 0;
-        }
-        .foto-perfil-img {
-            width: 360px; height: 360px;
-            object-fit: cover;
-            object-position: center;
-            animation: morph 12s ease-in-out infinite;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 30px 80px rgba(30, 77, 65, 0.25);
-            border: 4px solid var(--branco);
-        }
-
         .hero-sobre-texto .label {
             font-family: var(--fonte-corpo);
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 13px; font-weight: 700;
             color: var(--terracota);
             letter-spacing: 5px;
             text-transform: uppercase;
-            margin-bottom: 16px;
-            display: block;
+            margin-bottom: 16px; display: block;
         }
         .hero-sobre-texto h1 {
             font-family: var(--fonte-titulo);
@@ -203,58 +34,19 @@
         }
         .hero-sobre-texto .cargo {
             font-family: var(--fonte-subtitulo);
-            font-size: 24px;
-            font-style: italic;
+            font-size: 24px; font-style: italic;
             color: var(--verde-petroleo);
-            margin-bottom: 32px;
-            display: block;
+            margin-bottom: 32px; display: block;
         }
         .hero-sobre-texto p {
             font-size: 18px;
             color: var(--cinza-escuro);
             margin-bottom: 20px;
         }
-
-        /* ===== SEÇÕES ===== */
-        section { padding: 100px 24px; }
-        .container { max-width: 1100px; margin: 0 auto; }
-
-        .secao-label {
-            font-family: var(--fonte-corpo);
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--terracota);
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-            display: block;
-            text-align: center;
-        }
-        .secao-titulo {
-            font-family: var(--fonte-titulo);
-            font-size: 42px;
-            color: var(--verde-floresta);
-            text-align: center;
-            margin-bottom: 60px;
-            line-height: 1.2;
-        }
-        .secao-titulo::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--terracota), var(--verde-petroleo));
-            margin: 20px auto 0;
-            border-radius: 3px;
-        }
-
-        /* ===== QUEM SOU EU ===== */
         .quem-sou { background-color: var(--branco); }
         .quem-sou-texto {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 18px;
-            line-height: 1.9;
+            max-width: 800px; margin: 0 auto;
+            font-size: 18px; line-height: 1.9;
             color: var(--cinza-escuro);
         }
         .quem-sou-texto p { margin-bottom: 24px; }
@@ -266,33 +58,23 @@
             float: left;
             margin: 8px 12px 0 0;
         }
-
-        /* ===== TRAJETÓRIA (TIMELINE) ===== */
         .trajetoria { position: relative; }
         .timeline {
             position: relative;
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 900px; margin: 0 auto;
             padding-left: 60px;
         }
         .timeline::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            bottom: 20px;
+            content: ''; position: absolute;
+            left: 20px; top: 20px; bottom: 20px;
             width: 2px;
             background: linear-gradient(180deg, var(--terracota), var(--verde-petroleo), var(--verde-sage));
         }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 60px;
-        }
+        .timeline-item { position: relative; margin-bottom: 60px; }
         .timeline-item:last-child { margin-bottom: 0; }
         .timeline-dot {
             position: absolute;
-            left: -52px;
-            top: 6px;
+            left: -52px; top: 6px;
             width: 24px; height: 24px;
             border-radius: 50%;
             background: var(--branco);
@@ -301,7 +83,6 @@
         }
         .timeline-item:nth-child(2) .timeline-dot { border-color: var(--verde-petroleo); box-shadow: 0 0 0 6px rgba(41, 146, 133, 0.08); }
         .timeline-item:nth-child(3) .timeline-dot { border-color: var(--verde-floresta); box-shadow: 0 0 0 6px rgba(30, 77, 65, 0.08); }
-
         .timeline-item h3 {
             font-family: var(--fonte-titulo);
             font-size: 26px;
@@ -322,8 +103,6 @@
             line-height: 1.8;
             margin-bottom: 12px;
         }
-
-        /* ===== DIFERENCIAIS ===== */
         .diferenciais { background-color: var(--branco); }
         .diferenciais-grid {
             display: grid;
@@ -336,12 +115,10 @@
             border-radius: 32px;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
         .diferencial-card::before {
-            content: '';
-            position: absolute;
+            content: ''; position: absolute;
             top: 0; left: 0;
             width: 100%; height: 4px;
             background: linear-gradient(90deg, var(--terracota), var(--verde-petroleo), var(--verde-sage));
@@ -375,111 +152,13 @@
             color: var(--marrom-escuro);
             line-height: 1.7;
         }
-
-        /* ===== CTA ===== */
-        .cta {
-            background: linear-gradient(135deg, var(--verde-floresta), var(--verde-petroleo));
-            padding: 100px 24px;
-            text-align: center;
-            border-radius: 60px 60px 0 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta::before {
-            content: '';
-            position: absolute;
-            width: 500px; height: 500px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.04);
-            top: -200px; right: -150px;
-        }
-        .cta h2 {
-            font-family: var(--fonte-titulo);
-            font-size: 42px;
-            color: var(--branco);
-            margin-bottom: 16px;
-            position: relative;
-        }
-        .cta p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            position: relative;
-        }
-        .btn {
-            display: inline-block;
-            padding: 16px 40px;
-            font-family: var(--fonte-corpo);
-            font-size: 17px;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            margin: 8px;
-            position: relative;
-        }
-        .btn-primario {
-            background: linear-gradient(135deg, var(--terracota), #b03d1e);
-            color: var(--branco);
-            box-shadow: 0 8px 24px rgba(149, 48, 23, 0.35);
-        }
-        .btn-primario:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(149, 48, 23, 0.5);
-        }
-        .btn-claro {
-            background-color: var(--branco);
-            color: var(--verde-floresta);
-        }
-        .btn-claro:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(255, 255, 255, 0.3);
-        }
-
-        /* ===== RODAPÉ ===== */
-        footer {
-            background-color: var(--marrom-escuro);
-            color: var(--bege-claro);
-            padding: 60px 24px 40px;
-            text-align: center;
-        }
-        footer p { font-size: 16px; margin-bottom: 10px; }
-        footer a {
-            color: var(--verde-sage);
-            text-decoration: none;
-            transition: color 0.3s;
-            border-bottom: 1px solid transparent;
-        }
-        footer a:hover { color: var(--branco); border-bottom-color: var(--branco); }
-
-        /* ===== RESPONSIVO ===== */
         @media (max-width: 900px) {
-            .hero-sobre {
-                grid-template-columns: 1fr;
-                gap: 48px;
-                text-align: center;
-                padding: 60px 24px 40px;
-            }
-            .foto-perfil-img { width: 260px; height: 260px; }
+            .hero-sobre { grid-template-columns: 1fr; gap: 48px; text-align: center; padding: 60px 24px 40px; }
             .hero-sobre-texto h1 { font-size: 40px; }
             .hero-sobre-texto .cargo { font-size: 20px; }
-            .secao-titulo { font-size: 32px; }
             .timeline { padding-left: 48px; }
             .timeline::before { left: 14px; }
             .timeline-dot { left: -42px; width: 20px; height: 20px; }
-            .cta { padding: 70px 24px; }
-            .cta h2 { font-size: 30px; }
-        }
-
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; gap: 12px; }
-            nav ul { gap: 16px; flex-wrap: wrap; justify-content: center; }
-            nav a { font-size: 14px; }
-            .logo img { height: 55px; }
-            .blob { display: none; }
-            section { padding: 70px 24px; }
-            .btn { padding: 14px 28px; font-size: 16px; }
         }
     </style>
 </head>
@@ -487,29 +166,28 @@
 
     <div class="cursor-dot"></div>
     <div class="cursor-ring"></div>
-
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
 
     <header>
         <div class="header-container">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <img src="logo.png" alt="Thi Quiro - Quiropraxista & Massoterapeuta">
             </a>
             <nav>
                 <ul>
                     <li><a href="sobre.html" class="ativo">Sobre</a></li>
-                    <li><a href="index.html#servicos">Serviços</a></li>
-                    <li><a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="index.html#contato">Contato</a></li>
+                    <li><a href="filosofia.html">Filosofia</a></li>
+                    <li><a href="metodo.html">Método</a></li>
+                    <li><a href="formacao.html">Formação</a></li>
+                    <li><a href="valores.html">Valores</a></li>
+                    <li><a href="https://cal.com/thi.quiro" class="nav-agendar" target="_blank" rel="noopener">Agendar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- ===== HERO SOBRE ===== -->
     <section class="hero-sobre">
         <div class="foto-wrapper reveal">
             <img src="foto-thiago.jpg" class="foto-perfil-img" alt="Thiago Alvarenga - Quiropraxista e Massoterapeuta">
@@ -531,7 +209,6 @@
         </div>
     </section>
 
-    <!-- ===== QUEM SOU EU ===== -->
     <section class="quem-sou">
         <div class="container">
             <span class="secao-label reveal">Minha essência</span>
@@ -575,7 +252,6 @@
         </div>
     </section>
 
-    <!-- ===== TRAJETÓRIA ===== -->
     <section class="trajetoria">
         <div class="container">
             <span class="secao-label reveal">Minha história</span>
@@ -637,7 +313,6 @@
         </div>
     </section>
 
-    <!-- ===== DIFERENCIAIS ===== -->
     <section class="diferenciais">
         <div class="container">
             <span class="secao-label reveal">O que me diferencia</span>
@@ -692,7 +367,6 @@
         </div>
     </section>
 
-    <!-- ===== CTA ===== -->
     <section class="cta">
         <h2 class="reveal">Vamos começar?</h2>
         <p class="reveal">
@@ -701,23 +375,30 @@
         </p>
         <div class="reveal">
             <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="btn btn-claro">Agendar Consulta</a>
-            <a href="index.html" class="btn btn-primario">Voltar ao início</a>
+            <a href="filosofia.html" class="btn btn-primario">Ver filosofia</a>
         </div>
     </section>
 
-    <footer id="contato">
+    <footer>
         <p><strong>Thi Quiro</strong> — Quiropraxista & Massoterapeuta</p>
         <p>Salesópolis, SP e região · Agendamentos 100% online</p>
         <p>
-            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a> · 
-            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> · 
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a> ·
+            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> ·
             <a href="https://linktr.ee/thi.quiro" target="_blank" rel="noopener">Todos os links</a>
         </p>
         <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">© 2026 Thi Quiro. Todos os direitos reservados.</p>
     </footer>
 
+    <a href="index.html" class="btn-voltar" aria-label="Voltar ao início">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Início
+    </a>
+
     <script>
-        // Cursor
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorRing = document.querySelector('.cursor-ring');
         const pointerFine = window.matchMedia('(pointer: fine)').matches;
@@ -726,13 +407,11 @@
                 cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
                 cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
             });
-            document.querySelectorAll('a, button, .card, .diferencial-card').forEach(el => {
+            document.querySelectorAll('a, button').forEach(el => {
                 el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
                 el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
             });
         }
-
-        // Reveal
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
