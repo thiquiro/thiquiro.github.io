@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores | Thi Quiro</title>
+    <meta name="description" content="Os princípios que orientam a prática profissional de Thiago Alvarenga na Thi Quiro.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        .valores-secao { background-color: var(--branco); }
+        .valores-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .valor-card {
+            background: linear-gradient(145deg, var(--bege-claro), #faf6ef);
+            padding: 36px 28px;
+            border-radius: 28px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .valor-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--terracota), var(--verde-petroleo), var(--verde-sage));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        .valor-card:hover {
+            border-color: var(--verde-sage);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(30, 77, 65, 0.12);
+        }
+        .valor-card:hover::before { transform: scaleX(1); }
+        .valor-numero {
+            font-family: var(--fonte-titulo);
+            font-size: 32px;
+            color: var(--verde-sage);
+            opacity: 0.6;
+            line-height: 1;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .valor-card h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 22px;
+            color: var(--verde-floresta);
+            margin-bottom: 14px;
+        }
+        .valor-card p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--marrom-escuro);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Thi Quiro - Quiropraxista & Massoterapeuta">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="filosofia.html">Filosofia</a></li>
+                    <li><a href="metodo.html">Método</a></li>
+                    <li><a href="formacao.html">Formação</a></li>
+                    <li><a href="valores.html" class="ativo">Valores</a></li>
+                    <li><a href="https://cal.com/thi.quiro" class="nav-agendar" target="_blank" rel="noopener">Agendar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <span class="label reveal">Valores</span>
+        <h1 class="reveal">O que orienta<br>minha prática</h1>
+        <p class="lead reveal">
+            Princípios que sustentam cada decisão profissional — do primeiro contato
+            ao acompanhamento posterior.
+        </p>
+    </section>
+
+    <section class="valores-secao">
+        <div class="container">
+            <div class="valores-grid">
+                <div class="valor-card reveal">
+                    <span class="valor-numero">01</span>
+                    <h3>Responsabilidade</h3>
+                    <p>
+                        Avaliar as condições apresentadas antes de escolher uma intervenção.
+                        Considerar o histórico, investigar informações relevantes, reconhecer
+                        contraindicações e evitar procedimentos quando os riscos não permitirem
+                        uma atuação segura.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">02</span>
+                    <h3>Segurança</h3>
+                    <p>
+                        A segurança orienta minhas decisões. Quando há sinais de alerta, dúvidas
+                        relevantes ou condições que ultrapassam minha competência, priorizo a
+                        avaliação adequada e a conduta mais prudente.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">03</span>
+                    <h3>Conhecimento e atualização</h3>
+                    <p>
+                        Valorizo o estudo contínuo e a análise crítica das informações. Procuro
+                        diferenciar experiência pessoal de evidência científica e reconhecer que
+                        o conhecimento em saúde está em constante desenvolvimento.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">04</span>
+                    <h3>Individualidade</h3>
+                    <p>
+                        Cada pessoa apresenta uma história, uma condição física, expectativas e
+                        necessidades próprias. Procuro evitar abordagens padronizadas que
+                        desconsiderem essas diferenças.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">05</span>
+                    <h3>Honestidade</h3>
+                    <p>
+                        Apresento informações de forma clara e procuro não prometer resultados
+                        que não posso garantir. Quando não tenho elementos suficientes para
+                        explicar uma queixa, reconheço essa limitação.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">06</span>
+                    <h3>Respeito</h3>
+                    <p>
+                        Respeito a história, as escolhas, a privacidade, os limites físicos e o
+                        tempo de cada pessoa. O atendimento deve ocorrer em um ambiente de
+                        confiança, com comunicação adequada e consentimento.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">07</span>
+                    <h3>Empatia</h3>
+                    <p>
+                        Procuro compreender como a dor, o desconforto ou a limitação interferem
+                        na rotina de cada pessoa, sem minimizar sua experiência. A escuta é parte
+                        importante da compreensão da queixa.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">08</span>
+                    <h3>Clareza e transparência</h3>
+                    <p>
+                        A pessoa precisa saber como funciona o atendimento, quais são seus
+                        objetivos, quais técnicas podem ser utilizadas, quais são os custos e
+                        quais resultados são razoáveis de esperar.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">09</span>
+                    <h3>Compromisso com a qualidade</h3>
+                    <p>
+                        Procuro desenvolver um trabalho consistente, tanto na execução das
+                        intervenções quanto na organização dos processos — comunicação, registros,
+                        ambiente e relacionamento antes e depois da sessão.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">10</span>
+                    <h3>Aprimoramento contínuo</h3>
+                    <p>
+                        Entendo a formação profissional como um processo permanente. Estou disposto
+                        a rever condutas, aprofundar estudos, reconhecer limitações e melhorar
+                        procedimentos sempre que novas informações justificarem mudanças.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">11</span>
+                    <h3>Ética profissional</h3>
+                    <p>
+                        A ética está presente nas decisões técnicas, na comunicação, na divulgação
+                        dos serviços, na gestão dos dados e na relação com clientes e outros
+                        profissionais. Não utilizo o medo ou a vulnerabilidade para pressionar
+                        alguém a contratar serviços.
+                    </p>
+                </div>
+
+                <div class="valor-card reveal">
+                    <span class="valor-numero">12</span>
+                    <h3>Sustentabilidade profissional</h3>
+                    <p>
+                        Acredito que uma atividade precisa ser financeiramente viável e administrada
+                        com organização. Mas o crescimento deve acontecer de maneira compatível com
+                        os valores que orientam meu trabalho.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="citacao">
+        <blockquote class="reveal">
+            "A confiança precisa ser construída com transparência e coerência entre o que comunico e o que efetivamente posso oferecer."
+        </blockquote>
+    </section>
+
+    <section class="cta">
+        <h2 class="reveal">Vamos cuidar de você?</h2>
+        <p class="reveal">
+            Se esses valores fazem sentido para você, será um prazer te atender.
+        </p>
+        <div class="reveal">
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener" class="btn btn-claro">Agendar Consulta</a>
+            <a href="sobre.html" class="btn btn-primario">Sobre o Thiago</a>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Thi Quiro</strong> — Quiropraxista & Massoterapeuta</p>
+        <p>Salesópolis, SP e região · Agendamentos 100% online</p>
+        <p>
+            <a href="https://cal.com/thi.quiro" target="_blank" rel="noopener">Agendamento</a> ·
+            <a href="https://instagram.com/thi.quiro" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="https://linktr.ee/thi.quiro" target="_blank" rel="noopener">Todos os links</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">© 2026 Thi Quiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="index.html" class="btn-voltar" aria-label="Voltar ao início">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Início
+    </a>
+
+    <script>
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorRing = document.querySelector('.cursor-ring');
+        const pointerFine = window.matchMedia('(pointer: fine)').matches;
+        if (pointerFine) {
+            document.addEventListener('mousemove', (e) => {
+                cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+                cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+            });
+            document.querySelectorAll('a, button, .valor-card').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+            });
+        }
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), index * 40);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+
+</body>
+</html>
