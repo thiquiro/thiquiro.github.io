@@ -17,7 +17,6 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
         }
-
         .post-card {
             background-color: var(--branco);
             border-radius: 28px;
@@ -35,7 +34,6 @@
             transform: translateY(-8px);
             box-shadow: 0 24px 60px rgba(30, 77, 65, 0.15);
         }
-
         .post-card-header {
             padding: 40px 32px 20px;
             display: flex;
@@ -71,22 +69,14 @@
             box-shadow: 0 12px 30px rgba(30, 77, 65, 0.25);
             transition: transform 0.5s ease;
         }
-        .post-card:hover .post-card-icon {
-            transform: scale(1.08) rotate(-5deg);
-        }
-        .post-card-icon svg {
-            width: 42px;
-            height: 42px;
-            stroke-width: 1.6;
-        }
-
+        .post-card:hover .post-card-icon { transform: scale(1.08) rotate(-5deg); }
+        .post-card-icon svg { width: 42px; height: 42px; stroke-width: 1.6; }
         .post-card-body {
             padding: 28px 32px 36px;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
-
         .post-card-categoria {
             font-family: var(--fonte-corpo);
             font-size: 12px;
@@ -97,7 +87,6 @@
             margin-bottom: 12px;
             display: block;
         }
-
         .post-card-titulo {
             font-family: var(--fonte-titulo);
             font-size: 24px;
@@ -105,7 +94,6 @@
             line-height: 1.25;
             margin-bottom: 16px;
         }
-
         .post-card-resumo {
             font-size: 16px;
             color: var(--marrom-escuro);
@@ -113,7 +101,6 @@
             margin-bottom: 24px;
             flex: 1;
         }
-
         .post-card-ler {
             display: inline-flex;
             align-items: center;
@@ -124,11 +111,7 @@
             transition: gap 0.4s ease;
             align-self: flex-start;
         }
-        .post-card:hover .post-card-ler {
-            gap: 14px;
-            color: var(--terracota);
-        }
-
+        .post-card:hover .post-card-ler { gap: 14px; color: var(--terracota); }
         .blog-em-breve {
             max-width: 800px;
             margin: 80px auto 0;
@@ -171,6 +154,7 @@
                     <li><a href="metodo.html">Método</a></li>
                     <li><a href="formacao.html">Formação</a></li>
                     <li><a href="valores.html">Valores</a></li>
+                    <li><a href="blog.html" class="ativo">Blog</a></li>
                     <li><a href="links.html">Links</a></li>
                     <li><a href="https://cal.com/thi.quiro" class="nav-agendar" target="_blank" rel="noopener">Agendar</a></li>
                 </ul>
@@ -276,6 +260,7 @@
                         </span>
                     </div>
                 </a>
+
                 <a href="blog-dor-pos-ajuste.html" class="post-card reveal">
                     <div class="post-card-header">
                         <div class="post-card-icon">
@@ -301,6 +286,7 @@
                         </span>
                     </div>
                 </a>
+
             </div>
 
             <div class="blog-em-breve reveal">
